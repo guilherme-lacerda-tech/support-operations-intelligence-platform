@@ -1,0 +1,19 @@
+services:
+  app:
+    build: .
+    environment:
+      SUPPORT_OPS_DATABASE_URL: postgresql+psycopg://support_ops:support_ops@db:5432/support_ops
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: support_ops
+      POSTGRES_PASSWORD: support_ops
+      POSTGRES_DB: support_ops
+    ports:
+      - "5432:5432"
+

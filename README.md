@@ -2,6 +2,7 @@
 
 [![CI](https://github.com/guilherme-lacerda-tech/support-operations-intelligence-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/guilherme-lacerda-tech/support-operations-intelligence-platform/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/python-3.11%2B-blue)
+[![Release](https://img.shields.io/github/v/release/guilherme-lacerda-tech/support-operations-intelligence-platform)](https://github.com/guilherme-lacerda-tech/support-operations-intelligence-platform/releases)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 A synthetic operations intelligence platform for portfolio use. It receives operational events from
@@ -18,6 +19,8 @@ that turns noisy events into repeatable decisions: when to open an incident, whe
 retry, when to escalate and how to prove what happened later.
 
 ## Architecture
+
+See [docs/architecture.md](docs/architecture.md) for the technical overview.
 
 ```mermaid
 flowchart LR
@@ -83,6 +86,8 @@ local demos and automated tests.
 }
 ```
 
+More request/response examples are in [docs/api-examples.md](docs/api-examples.md).
+
 ## Project Structure
 
 ```text
@@ -104,11 +109,16 @@ examples/      Reproducible demo
 - Rules are stored in the database instead of hardcoded in Python.
 - Cooldown is enforced before queuing repeated actions.
 
+See [docs/adr/0001-fastapi-sqlalchemy-synthetic-ops.md](docs/adr/0001-fastapi-sqlalchemy-synthetic-ops.md).
+
 ## Security
 
 See [SECURITY.md](SECURITY.md). Use only synthetic data in demos, issues and pull requests.
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## Roadmap
 
 See [ROADMAP.md](ROADMAP.md).
-

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "support-operations-intelligence-platform"
-version = "0.1.0"
+version = "0.1.1"
 description = "Synthetic operations intelligence platform with rules, queues, incidents, audit history and FastAPI."
 readme = "README.md"
 requires-python = ">=3.11"

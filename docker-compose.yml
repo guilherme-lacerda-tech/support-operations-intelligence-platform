@@ -2,18 +2,33 @@ services:
   app:
     build: .
     environment:
-      SUPPORT_OPS_DATABASE_URL: postgresql+psycopg://support_ops:support_ops@db:5432/support_ops
+      SUPPORT_OPS_DATABASE_URL: ${SUPPORT_OPS_DATABASE_URL:-postgresql+psycopg://support_ops:support_ops@db:5432/support_ops}
     ports:
-      - "8000:8000"
+      - "127.0.0.1:8000:8000"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "from urllib.request import urlopen; raise SystemExit(0 if urlopen('http://127.0.0.1:8000/health', timeout=2).status == 200 else 1)"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   db:
     image: postgres:16-alpine
     environment:
-      POSTGRES_USER: support_ops
-      POSTGRES_PASSWORD: support_ops
-      POSTGRES_DB: support_ops
+      POSTGRES_USER: ${POSTGRES_USER:-support_ops}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-support_ops}
+      POSTGRES_DB: ${POSTGRES_DB:-support_ops}
     ports:
-      - "5432:5432"
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-support_ops} -d ${POSTGRES_DB:-support_ops}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
+volumes:
+  postgres-data:

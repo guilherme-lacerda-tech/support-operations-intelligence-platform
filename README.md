@@ -68,11 +68,14 @@ python -m pytest --cov --cov-report=term-missing -q
 ## Docker
 
 ```bash
+cp .env.example .env
 docker compose up --build
 ```
 
 Docker is included for reproducibility with PostgreSQL. The application also works with SQLite for
-local demos and automated tests.
+local demos and automated tests. Compose binds app and database ports to `127.0.0.1` for local-only
+access. Docker runtime was reviewed here, but not executed because Docker is unavailable in this
+workspace.
 
 ## Example Event
 

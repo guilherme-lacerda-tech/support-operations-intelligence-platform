@@ -12,6 +12,22 @@ auditable history.
 This is an independent public implementation. It does not contain employer code, private endpoints,
 real customer data, production logs, device identifiers or proprietary rules.
 
+## Clean-Room Multi-Stack Case
+
+This repository now includes a reproducible Python vs .NET engineering case. Both stacks implement
+the same synthetic behavior contract, consume the same deterministic JSONL workloads and emit a
+canonical summary for cross-stack validation.
+
+- Python implementation: FastAPI, SQLAlchemy and SQLite.
+- .NET implementation: .NET 10, ASP.NET Core and `Microsoft.Data.Sqlite`.
+- Shared contract: [specification/behavior-contract.md](specification/behavior-contract.md).
+- .NET source and tests: [dotnet/](dotnet/).
+- Benchmark results: [benchmarks/python-vs-dotnet-results.md](benchmarks/python-vs-dotnet-results.md).
+
+The intent is not to claim universal language superiority. The project demonstrates clean-room
+reimplementation, behavioral equivalence, testing, benchmark design, HTTP load testing and bottleneck
+analysis.
+
 ## Why
 
 Technical support and operations teams often need more than a ticket list. They need a small system
@@ -47,6 +63,8 @@ flowchart LR
 - Retryable synthetic action executor with timeout handling.
 - Health sweep job that creates follow-up actions for stale open incidents.
 - Reproducible demo using only fictional data.
+- Clean-room .NET 10 implementation with matching behavior contract.
+- Deterministic workloads and benchmark scripts for engine, HTTP and long-running soak tests.
 
 ## Quick Start
 
@@ -63,7 +81,44 @@ Open `http://127.0.0.1:8000/docs`.
 ```bash
 python -m ruff check .
 python -m pytest --cov --cov-report=term-missing -q
+dotnet build dotnet/OpsIntelligenceCleanRoom.sln
+dotnet test dotnet/OpsIntelligenceCleanRoom.sln --no-build
 ```
+
+Current local evidence:
+
+- Python: 19 tests passing.
+- .NET: 14 xUnit tests passing.
+- Cross-stack canonical equivalence: true for 100-event and 1,000-event workloads.
+
+## Benchmarks
+
+Generate workloads:
+
+```bash
+python benchmarks/generate_workloads.py
+```
+
+Run engine benchmarks:
+
+```bash
+python benchmarks/run_engine_benchmarks.py --sizes 100,1000 --runs 5 --warmup 1 --wal-modes default
+```
+
+Run HTTP benchmark:
+
+```bash
+python benchmarks/http_benchmark.py --requests 50 --concurrency 1,10,25,50,100
+```
+
+Run long-running soak:
+
+```bash
+python benchmarks/http_soak.py --duration-seconds 1800 --sample-seconds 60 --interval-seconds 1
+```
+
+See [benchmarks/python-vs-dotnet-results.md](benchmarks/python-vs-dotnet-results.md) for results and
+interpretation.
 
 ## Docker
 
@@ -74,8 +129,8 @@ docker compose up --build
 
 Docker is included for reproducibility with PostgreSQL. The application also works with SQLite for
 local demos and automated tests. Compose binds app and database ports to `127.0.0.1` for local-only
-access. Docker runtime was reviewed here, but not executed because Docker is unavailable in this
-workspace.
+access. Docker was not executed in the latest local validation because Docker is not installed or
+available on PATH in this workstation.
 
 ## Example Event
 
@@ -111,6 +166,9 @@ examples/      Reproducible demo
 - PostgreSQL is available through `docker-compose.yml` for production-like local testing.
 - Rules are stored in the database instead of hardcoded in Python.
 - Cooldown is enforced before queuing repeated actions.
+- The .NET clean-room version uses direct parameterized SQLite commands to keep database behavior
+  explicit during benchmarks.
+- Benchmark conclusions are scoped to local synthetic workloads and documented SQLite settings.
 
 See [docs/adr/0001-fastapi-sqlalchemy-synthetic-ops.md](docs/adr/0001-fastapi-sqlalchemy-synthetic-ops.md).
 

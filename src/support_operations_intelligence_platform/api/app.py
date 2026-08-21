@@ -5,19 +5,33 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session, sessionmaker
 
 from support_operations_intelligence_platform.core.database import SessionLocal, create_session_factory
-from support_operations_intelligence_platform.models import Action, Asset, AutomationRule, Incident
+from support_operations_intelligence_platform.models import (
+    Action,
+    ActionState,
+    Asset,
+    AuditLog,
+    AutomationRule,
+    Incident,
+    JobRun,
+    OperationalEvent,
+)
 from support_operations_intelligence_platform.schemas import (
     ActionRead,
     AssetCreate,
     AssetRead,
+    AuditRead,
     EventCreate,
     IncidentRead,
     JobResult,
+    MaintenanceResult,
+    MetricsRead,
     ProcessResult,
+    ResetResult,
     RuleCreate,
     RuleRead,
 )
 from support_operations_intelligence_platform.seed import seed_demo_data
+from support_operations_intelligence_platform.services.actions import execute_action_with_retry
 from support_operations_intelligence_platform.services.jobs import run_health_sweep
 from support_operations_intelligence_platform.services.processor import EventProcessor, UnknownAssetError
 
@@ -94,6 +108,57 @@ def create_app(session_factory: sessionmaker[Session] | None = None) -> FastAPI:
     @app.get("/actions", response_model=list[ActionRead], tags=["actions"])
     def list_actions(session: Session = Depends(get_session)) -> list[Action]:
         return list(session.scalars(select(Action).order_by(Action.created_at.desc())).all())
+
+    @app.get("/audit", response_model=list[AuditRead], tags=["audit"])
+    def list_audit(session: Session = Depends(get_session)) -> list[AuditLog]:
+        return list(session.scalars(select(AuditLog).order_by(AuditLog.created_at.desc())).all())
+
+    @app.get("/metrics", response_model=MetricsRead, tags=["metrics"])
+    def metrics(session: Session = Depends(get_session)) -> MetricsRead:
+        actions = list(session.scalars(select(Action)).all())
+        return MetricsRead(
+            events=session.query(OperationalEvent).count(),
+            incidents=session.query(Incident).count(),
+            actions=len(actions),
+            audit_logs=session.query(AuditLog).count(),
+            suppressions=session.query(AuditLog).filter(AuditLog.event_type == "event_suppressed").count(),
+            queued_actions=sum(1 for action in actions if action.state == ActionState.QUEUED.value),
+            succeeded_actions=sum(1 for action in actions if action.state == ActionState.SUCCEEDED.value),
+            failed_actions=sum(1 for action in actions if action.state == ActionState.FAILED.value),
+            retries=sum(max(action.attempts - 1, 0) for action in actions),
+        )
+
+    @app.post("/maintenance/process-actions", response_model=MaintenanceResult, tags=["maintenance"])
+    def process_actions(session: Session = Depends(get_session)) -> MaintenanceResult:
+        queued_actions = list(
+            session.scalars(
+                select(Action)
+                .where(Action.state == ActionState.QUEUED.value)
+                .order_by(Action.created_at)
+            ).all()
+        )
+        succeeded = 0
+        failed = 0
+        for action in queued_actions:
+            execute_action_with_retry(session, action)
+            if action.state == ActionState.SUCCEEDED.value:
+                succeeded += 1
+            else:
+                failed += 1
+        return MaintenanceResult(processed=len(queued_actions), succeeded=succeeded, failed=failed)
+
+    @app.delete("/admin/reset", response_model=ResetResult, tags=["admin"])
+    def reset(session: Session = Depends(get_session)) -> ResetResult:
+        deleted = {
+            "actions": session.query(Action).delete(),
+            "incidents": session.query(Incident).delete(),
+            "events": session.query(OperationalEvent).delete(),
+            "audit_logs": session.query(AuditLog).delete(),
+            "job_runs": session.query(JobRun).delete(),
+            "rules": session.query(AutomationRule).delete(),
+            "assets": session.query(Asset).delete(),
+        }
+        return ResetResult(deleted=deleted)
 
     @app.post("/jobs/health-sweep", response_model=JobResult, tags=["jobs"])
     def health_sweep(session: Session = Depends(get_session)) -> JobResult:

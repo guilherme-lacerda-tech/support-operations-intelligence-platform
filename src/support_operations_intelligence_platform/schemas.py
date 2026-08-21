@@ -1,6 +1,10 @@
 from datetime import datetime
+from typing import Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
+
+
+ExecutorMode = Literal["success", "transient_failure", "permanent_failure"]
 
 
 class AssetCreate(BaseModel):
@@ -32,11 +36,24 @@ class RuleRead(RuleCreate):
 
 
 class EventCreate(BaseModel):
-    asset_external_id: str = Field(min_length=3, max_length=80)
+    asset_id: str | None = Field(default=None, min_length=3, max_length=80)
+    asset_external_id: str | None = Field(default=None, min_length=3, max_length=80)
     source: str = Field(min_length=3, max_length=120)
     category: str = Field(min_length=2, max_length=80)
     severity: int = Field(ge=1, le=100)
     message: str = Field(min_length=5)
+    occurred_at: datetime | None = None
+    executor_mode: ExecutorMode = "success"
+
+    @model_validator(mode="after")
+    def normalize_asset_fields(self) -> "EventCreate":
+        if not self.asset_id and not self.asset_external_id:
+            raise ValueError("asset_id or asset_external_id is required")
+        if self.asset_id and not self.asset_external_id:
+            self.asset_external_id = self.asset_id
+        if self.asset_external_id and not self.asset_id:
+            self.asset_id = self.asset_external_id
+        return self
 
 
 class EventRead(BaseModel):
@@ -45,6 +62,8 @@ class EventRead(BaseModel):
     category: str
     severity: int
     message: str
+    occurred_at: datetime
+    executor_mode: str
     created_at: datetime
 
     model_config = {"from_attributes": True}
@@ -53,8 +72,9 @@ class EventRead(BaseModel):
 class IncidentRead(BaseModel):
     id: int
     asset_id: int
-    rule_id: int
+    rule_id: int | None
     event_id: int
+    category: str
     state: str
     summary: str
     created_at: datetime
@@ -84,4 +104,37 @@ class JobResult(BaseModel):
     job_name: str
     status: str
     actions_created: int
+
+
+class AuditRead(BaseModel):
+    id: int
+    event_type: str
+    entity_type: str
+    entity_id: int
+    message: str
+    created_at: datetime
+
+    model_config = {"from_attributes": True}
+
+
+class MaintenanceResult(BaseModel):
+    processed: int
+    succeeded: int
+    failed: int
+
+
+class MetricsRead(BaseModel):
+    events: int
+    incidents: int
+    actions: int
+    audit_logs: int
+    suppressions: int
+    queued_actions: int
+    succeeded_actions: int
+    failed_actions: int
+    retries: int
+
+
+class ResetResult(BaseModel):
+    deleted: dict[str, int]
 

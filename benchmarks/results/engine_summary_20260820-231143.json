@@ -1,0 +1,132 @@
+{
+  "correctness": [
+    {
+      "dotnet": {
+        "action_failed": 2,
+        "action_succeeded": 46,
+        "actions": 48,
+        "audit_logs": 276,
+        "errors": 0,
+        "events": 100,
+        "incidents": 76,
+        "normal_events": 20,
+        "retries": 17,
+        "suppressions": 4,
+        "warning_incidents": 28
+      },
+      "equivalent": true,
+      "python": {
+        "action_failed": 2,
+        "action_succeeded": 46,
+        "actions": 48,
+        "audit_logs": 276,
+        "errors": 0,
+        "events": 100,
+        "incidents": 76,
+        "normal_events": 20,
+        "retries": 17,
+        "suppressions": 4,
+        "warning_incidents": 28
+      },
+      "wal": true,
+      "workload": "workload_100.jsonl"
+    }
+  ],
+  "raw": "benchmarks\\results\\engine_raw_20260820-231143.jsonl",
+  "summaries": [
+    {
+      "canonical": {
+        "action_failed": 2,
+        "action_succeeded": 46,
+        "actions": 48,
+        "audit_logs": 276,
+        "errors": 0,
+        "events": 100,
+        "incidents": 76,
+        "normal_events": 20,
+        "retries": 17,
+        "suppressions": 4,
+        "warning_incidents": 28
+      },
+      "cpu_ms": {
+        "max": 953.125,
+        "mean": 887.5,
+        "median": 906.25,
+        "min": 828.125,
+        "p95": 953.125
+      },
+      "elapsed_ms": {
+        "max": 1777.763,
+        "mean": 1661.844,
+        "median": 1648.947,
+        "min": 1584.507,
+        "p95": 1777.763
+      },
+      "events_per_second": {
+        "max": 63.11,
+        "mean": 60.258,
+        "median": 60.64,
+        "min": 56.25,
+        "p95": 63.11
+      },
+      "runs": 5,
+      "stack": "python",
+      "wal": true,
+      "working_set_mb": {
+        "max": 58.45,
+        "mean": 58.262,
+        "median": 58.23,
+        "min": 58.1,
+        "p95": 58.45
+      },
+      "workload": "workload_100.jsonl"
+    },
+    {
+      "canonical": {
+        "action_failed": 2,
+        "action_succeeded": 46,
+        "actions": 48,
+        "audit_logs": 276,
+        "errors": 0,
+        "events": 100,
+        "incidents": 76,
+        "normal_events": 20,
+        "retries": 17,
+        "suppressions": 4,
+        "warning_incidents": 28
+      },
+      "cpu_ms": {
+        "max": 234.375,
+        "mean": 203.125,
+        "median": 218.75,
+        "min": 140.625,
+        "p95": 234.375
+      },
+      "elapsed_ms": {
+        "max": 247.17,
+        "mean": 216.734,
+        "median": 223.374,
+        "min": 157.051,
+        "p95": 247.17
+      },
+      "events_per_second": {
+        "max": 636.73,
+        "mean": 473.468,
+        "median": 447.68,
+        "min": 404.58,
+        "p95": 636.73
+      },
+      "runs": 5,
+      "stack": "dotnet",
+      "wal": true,
+      "working_set_mb": {
+        "max": 36.7,
+        "mean": 36.612,
+        "median": 36.64,
+        "min": 36.5,
+        "p95": 36.7
+      },
+      "workload": "workload_100.jsonl"
+    }
+  ]
+}

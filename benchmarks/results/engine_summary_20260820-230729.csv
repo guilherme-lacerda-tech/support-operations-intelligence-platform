@@ -1,0 +1,5 @@
+workload,stack,wal,runs,elapsed_mean_ms,events_per_second_mean,cpu_mean_ms
+workload_100.jsonl,python,False,5,1495.589,67.226,718.75
+workload_100.jsonl,dotnet,False,5,1027.565,97.78,1134.375
+workload_1000.jsonl,python,False,5,15307.384,65.532,6778.125
+workload_1000.jsonl,dotnet,False,5,9660.941,104.084,8200.0

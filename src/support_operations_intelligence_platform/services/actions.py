@@ -25,7 +25,9 @@ def default_transport(action: Action, timeout_seconds: float) -> ActionAttemptRe
     if timeout_seconds <= 0:
         raise ActionTimeoutError("timeout must be positive")
     sleep(min(timeout_seconds, 0.01))
-    if "fail_once" in action.detail and action.attempts <= 1:
+    if "permanent_failure" in action.detail:
+        return ActionAttemptResult(False, "synthetic permanent failure")
+    if ("transient_failure" in action.detail or "fail_once" in action.detail) and action.attempts <= 1:
         return ActionAttemptResult(False, "synthetic transient failure")
     return ActionAttemptResult(True, f"synthetic {action.action_type} completed")
 
@@ -59,9 +61,10 @@ def execute_action_with_retry(
 
     action.detail = last_detail
     action.updated_at = datetime.now(UTC)
+    audit_type = "action_succeeded" if action.state == ActionState.SUCCEEDED.value else "action_failed_final"
     session.add(
         AuditLog(
-            event_type="action_executed",
+            event_type=audit_type,
             entity_type="action",
             entity_id=action.id,
             message=f"{action.action_type} finished as {action.state} after {action.attempts} attempts",

@@ -1,0 +1,42 @@
+{
+  "duration_seconds": 10,
+  "interval_seconds": 0.5,
+  "rows": [
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 8
+        },
+        "python": {
+          "errors": 0,
+          "sent": 8
+        }
+      },
+      "dotnet": {
+        "actions": 0,
+        "audit_logs": 2,
+        "events": 1,
+        "failed_actions": 0,
+        "incidents": 1,
+        "queued_actions": 0,
+        "retries": 0,
+        "succeeded_actions": 0,
+        "suppressions": 0
+      },
+      "elapsed_seconds": 5.875,
+      "python": {
+        "actions": 0,
+        "audit_logs": 2,
+        "events": 1,
+        "failed_actions": 0,
+        "incidents": 1,
+        "queued_actions": 0,
+        "retries": 0,
+        "succeeded_actions": 0,
+        "suppressions": 0
+      }
+    }
+  ],
+  "sample_seconds": 5
+}

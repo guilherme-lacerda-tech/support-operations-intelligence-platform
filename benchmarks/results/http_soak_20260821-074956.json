@@ -1,0 +1,1022 @@
+{
+  "duration_seconds": 1800,
+  "interval_seconds": 1.0,
+  "rows": [
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 55
+        },
+        "python": {
+          "errors": 0,
+          "sent": 55
+        }
+      },
+      "dotnet": {
+        "actions": 36,
+        "audit_logs": 166,
+        "events": 55,
+        "failed_actions": 0,
+        "incidents": 55,
+        "queued_actions": 16,
+        "retries": 2,
+        "succeeded_actions": 20,
+        "suppressions": 0
+      },
+      "elapsed_seconds": 60.719,
+      "python": {
+        "actions": 36,
+        "audit_logs": 166,
+        "events": 55,
+        "failed_actions": 0,
+        "incidents": 55,
+        "queued_actions": 16,
+        "retries": 2,
+        "succeeded_actions": 20,
+        "suppressions": 0
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 112
+        },
+        "python": {
+          "errors": 0,
+          "sent": 112
+        }
+      },
+      "dotnet": {
+        "actions": 74,
+        "audit_logs": 358,
+        "events": 112,
+        "failed_actions": 0,
+        "incidents": 112,
+        "queued_actions": 14,
+        "retries": 6,
+        "succeeded_actions": 60,
+        "suppressions": 0
+      },
+      "elapsed_seconds": 120.0,
+      "python": {
+        "actions": 74,
+        "audit_logs": 358,
+        "events": 112,
+        "failed_actions": 0,
+        "incidents": 112,
+        "queued_actions": 14,
+        "retries": 6,
+        "succeeded_actions": 60,
+        "suppressions": 0
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 170
+        },
+        "python": {
+          "errors": 0,
+          "sent": 170
+        }
+      },
+      "dotnet": {
+        "actions": 113,
+        "audit_logs": 553,
+        "events": 170,
+        "failed_actions": 0,
+        "incidents": 170,
+        "queued_actions": 13,
+        "retries": 9,
+        "succeeded_actions": 100,
+        "suppressions": 0
+      },
+      "elapsed_seconds": 180.391,
+      "python": {
+        "actions": 113,
+        "audit_logs": 553,
+        "events": 170,
+        "failed_actions": 0,
+        "incidents": 170,
+        "queued_actions": 13,
+        "retries": 9,
+        "succeeded_actions": 100,
+        "suppressions": 0
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 228
+        },
+        "python": {
+          "errors": 0,
+          "sent": 228
+        }
+      },
+      "dotnet": {
+        "actions": 133,
+        "audit_logs": 722,
+        "events": 228,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 28
+      },
+      "elapsed_seconds": 240.407,
+      "python": {
+        "actions": 133,
+        "audit_logs": 722,
+        "events": 228,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 28
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 287
+        },
+        "python": {
+          "errors": 0,
+          "sent": 287
+        }
+      },
+      "dotnet": {
+        "actions": 133,
+        "audit_logs": 840,
+        "events": 287,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 87
+      },
+      "elapsed_seconds": 301.016,
+      "python": {
+        "actions": 133,
+        "audit_logs": 840,
+        "events": 287,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 87
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 345
+        },
+        "python": {
+          "errors": 0,
+          "sent": 345
+        }
+      },
+      "dotnet": {
+        "actions": 133,
+        "audit_logs": 956,
+        "events": 345,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 145
+      },
+      "elapsed_seconds": 360.75,
+      "python": {
+        "actions": 133,
+        "audit_logs": 956,
+        "events": 345,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 145
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 403
+        },
+        "python": {
+          "errors": 0,
+          "sent": 403
+        }
+      },
+      "dotnet": {
+        "actions": 133,
+        "audit_logs": 1072,
+        "events": 403,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 203
+      },
+      "elapsed_seconds": 420.657,
+      "python": {
+        "actions": 133,
+        "audit_logs": 1072,
+        "events": 403,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 203
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 460
+        },
+        "python": {
+          "errors": 0,
+          "sent": 460
+        }
+      },
+      "dotnet": {
+        "actions": 133,
+        "audit_logs": 1186,
+        "events": 460,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 260
+      },
+      "elapsed_seconds": 480.297,
+      "python": {
+        "actions": 133,
+        "audit_logs": 1186,
+        "events": 460,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 260
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 518
+        },
+        "python": {
+          "errors": 0,
+          "sent": 518
+        }
+      },
+      "dotnet": {
+        "actions": 133,
+        "audit_logs": 1302,
+        "events": 518,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 318
+      },
+      "elapsed_seconds": 540.266,
+      "python": {
+        "actions": 133,
+        "audit_logs": 1302,
+        "events": 518,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 318
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 576
+        },
+        "python": {
+          "errors": 0,
+          "sent": 576
+        }
+      },
+      "dotnet": {
+        "actions": 133,
+        "audit_logs": 1418,
+        "events": 576,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 376
+      },
+      "elapsed_seconds": 600.766,
+      "python": {
+        "actions": 133,
+        "audit_logs": 1418,
+        "events": 576,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 376
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 633
+        },
+        "python": {
+          "errors": 0,
+          "sent": 633
+        }
+      },
+      "dotnet": {
+        "actions": 133,
+        "audit_logs": 1532,
+        "events": 633,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 433
+      },
+      "elapsed_seconds": 660.563,
+      "python": {
+        "actions": 133,
+        "audit_logs": 1532,
+        "events": 633,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 433
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 691
+        },
+        "python": {
+          "errors": 0,
+          "sent": 691
+        }
+      },
+      "dotnet": {
+        "actions": 133,
+        "audit_logs": 1648,
+        "events": 691,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 491
+      },
+      "elapsed_seconds": 720.266,
+      "python": {
+        "actions": 133,
+        "audit_logs": 1648,
+        "events": 691,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 491
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 749
+        },
+        "python": {
+          "errors": 0,
+          "sent": 749
+        }
+      },
+      "dotnet": {
+        "actions": 133,
+        "audit_logs": 1764,
+        "events": 749,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 549
+      },
+      "elapsed_seconds": 780.016,
+      "python": {
+        "actions": 133,
+        "audit_logs": 1764,
+        "events": 749,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 549
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 808
+        },
+        "python": {
+          "errors": 0,
+          "sent": 808
+        }
+      },
+      "dotnet": {
+        "actions": 133,
+        "audit_logs": 1882,
+        "events": 808,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 608
+      },
+      "elapsed_seconds": 840.672,
+      "python": {
+        "actions": 133,
+        "audit_logs": 1882,
+        "events": 808,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 608
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 866
+        },
+        "python": {
+          "errors": 0,
+          "sent": 866
+        }
+      },
+      "dotnet": {
+        "actions": 133,
+        "audit_logs": 1998,
+        "events": 866,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 666
+      },
+      "elapsed_seconds": 900.985,
+      "python": {
+        "actions": 133,
+        "audit_logs": 1998,
+        "events": 866,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 666
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 923
+        },
+        "python": {
+          "errors": 0,
+          "sent": 923
+        }
+      },
+      "dotnet": {
+        "actions": 133,
+        "audit_logs": 2112,
+        "events": 923,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 723
+      },
+      "elapsed_seconds": 960.61,
+      "python": {
+        "actions": 133,
+        "audit_logs": 2112,
+        "events": 923,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 723
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 982
+        },
+        "python": {
+          "errors": 0,
+          "sent": 982
+        }
+      },
+      "dotnet": {
+        "actions": 133,
+        "audit_logs": 2230,
+        "events": 982,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 782
+      },
+      "elapsed_seconds": 1021.0,
+      "python": {
+        "actions": 133,
+        "audit_logs": 2230,
+        "events": 982,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 782
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 1040
+        },
+        "python": {
+          "errors": 0,
+          "sent": 1040
+        }
+      },
+      "dotnet": {
+        "actions": 133,
+        "audit_logs": 2346,
+        "events": 1040,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 840
+      },
+      "elapsed_seconds": 1080.594,
+      "python": {
+        "actions": 133,
+        "audit_logs": 2346,
+        "events": 1040,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 840
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 1098
+        },
+        "python": {
+          "errors": 0,
+          "sent": 1098
+        }
+      },
+      "dotnet": {
+        "actions": 133,
+        "audit_logs": 2462,
+        "events": 1098,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 898
+      },
+      "elapsed_seconds": 1140.235,
+      "python": {
+        "actions": 133,
+        "audit_logs": 2462,
+        "events": 1098,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 898
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 1156
+        },
+        "python": {
+          "errors": 0,
+          "sent": 1156
+        }
+      },
+      "dotnet": {
+        "actions": 133,
+        "audit_logs": 2578,
+        "events": 1156,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 956
+      },
+      "elapsed_seconds": 1200.063,
+      "python": {
+        "actions": 133,
+        "audit_logs": 2578,
+        "events": 1156,
+        "failed_actions": 0,
+        "incidents": 200,
+        "queued_actions": 0,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 956
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 1215
+        },
+        "python": {
+          "errors": 0,
+          "sent": 1215
+        }
+      },
+      "dotnet": {
+        "actions": 143,
+        "audit_logs": 2706,
+        "events": 1215,
+        "failed_actions": 0,
+        "incidents": 215,
+        "queued_actions": 10,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 1000
+      },
+      "elapsed_seconds": 1260.922,
+      "python": {
+        "actions": 143,
+        "audit_logs": 2706,
+        "events": 1215,
+        "failed_actions": 0,
+        "incidents": 215,
+        "queued_actions": 10,
+        "retries": 12,
+        "succeeded_actions": 133,
+        "suppressions": 1000
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 1271
+        },
+        "python": {
+          "errors": 0,
+          "sent": 1271
+        }
+      },
+      "dotnet": {
+        "actions": 180,
+        "audit_logs": 2895,
+        "events": 1271,
+        "failed_actions": 0,
+        "incidents": 271,
+        "queued_actions": 7,
+        "retries": 15,
+        "succeeded_actions": 173,
+        "suppressions": 1000
+      },
+      "elapsed_seconds": 1320.219,
+      "python": {
+        "actions": 180,
+        "audit_logs": 2895,
+        "events": 1271,
+        "failed_actions": 0,
+        "incidents": 271,
+        "queued_actions": 7,
+        "retries": 15,
+        "succeeded_actions": 173,
+        "suppressions": 1000
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 1328
+        },
+        "python": {
+          "errors": 0,
+          "sent": 1328
+        }
+      },
+      "dotnet": {
+        "actions": 218,
+        "audit_logs": 3087,
+        "events": 1328,
+        "failed_actions": 0,
+        "incidents": 328,
+        "queued_actions": 5,
+        "retries": 19,
+        "succeeded_actions": 213,
+        "suppressions": 1000
+      },
+      "elapsed_seconds": 1380.36,
+      "python": {
+        "actions": 218,
+        "audit_logs": 3087,
+        "events": 1328,
+        "failed_actions": 0,
+        "incidents": 328,
+        "queued_actions": 5,
+        "retries": 19,
+        "succeeded_actions": 213,
+        "suppressions": 1000
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 1385
+        },
+        "python": {
+          "errors": 0,
+          "sent": 1385
+        }
+      },
+      "dotnet": {
+        "actions": 256,
+        "audit_logs": 3279,
+        "events": 1385,
+        "failed_actions": 0,
+        "incidents": 385,
+        "queued_actions": 3,
+        "retries": 23,
+        "succeeded_actions": 253,
+        "suppressions": 1000
+      },
+      "elapsed_seconds": 1440.594,
+      "python": {
+        "actions": 256,
+        "audit_logs": 3279,
+        "events": 1385,
+        "failed_actions": 0,
+        "incidents": 385,
+        "queued_actions": 3,
+        "retries": 23,
+        "succeeded_actions": 253,
+        "suppressions": 1000
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 1442
+        },
+        "python": {
+          "errors": 0,
+          "sent": 1442
+        }
+      },
+      "dotnet": {
+        "actions": 266,
+        "audit_logs": 3416,
+        "events": 1442,
+        "failed_actions": 0,
+        "incidents": 400,
+        "queued_actions": 0,
+        "retries": 24,
+        "succeeded_actions": 266,
+        "suppressions": 1042
+      },
+      "elapsed_seconds": 1500.0,
+      "python": {
+        "actions": 266,
+        "audit_logs": 3416,
+        "events": 1442,
+        "failed_actions": 0,
+        "incidents": 400,
+        "queued_actions": 0,
+        "retries": 24,
+        "succeeded_actions": 266,
+        "suppressions": 1042
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 1499
+        },
+        "python": {
+          "errors": 0,
+          "sent": 1499
+        }
+      },
+      "dotnet": {
+        "actions": 266,
+        "audit_logs": 3530,
+        "events": 1499,
+        "failed_actions": 0,
+        "incidents": 400,
+        "queued_actions": 0,
+        "retries": 24,
+        "succeeded_actions": 266,
+        "suppressions": 1099
+      },
+      "elapsed_seconds": 1560.407,
+      "python": {
+        "actions": 266,
+        "audit_logs": 3530,
+        "events": 1499,
+        "failed_actions": 0,
+        "incidents": 400,
+        "queued_actions": 0,
+        "retries": 24,
+        "succeeded_actions": 266,
+        "suppressions": 1099
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 1551
+        },
+        "python": {
+          "errors": 0,
+          "sent": 1551
+        }
+      },
+      "dotnet": {
+        "actions": 266,
+        "audit_logs": 3634,
+        "events": 1551,
+        "failed_actions": 0,
+        "incidents": 400,
+        "queued_actions": 0,
+        "retries": 24,
+        "succeeded_actions": 266,
+        "suppressions": 1151
+      },
+      "elapsed_seconds": 1620.547,
+      "python": {
+        "actions": 266,
+        "audit_logs": 3634,
+        "events": 1551,
+        "failed_actions": 0,
+        "incidents": 400,
+        "queued_actions": 0,
+        "retries": 24,
+        "succeeded_actions": 266,
+        "suppressions": 1151
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 1609
+        },
+        "python": {
+          "errors": 0,
+          "sent": 1609
+        }
+      },
+      "dotnet": {
+        "actions": 266,
+        "audit_logs": 3750,
+        "events": 1609,
+        "failed_actions": 0,
+        "incidents": 400,
+        "queued_actions": 0,
+        "retries": 24,
+        "succeeded_actions": 266,
+        "suppressions": 1209
+      },
+      "elapsed_seconds": 1680.5,
+      "python": {
+        "actions": 266,
+        "audit_logs": 3750,
+        "events": 1609,
+        "failed_actions": 0,
+        "incidents": 400,
+        "queued_actions": 0,
+        "retries": 24,
+        "succeeded_actions": 266,
+        "suppressions": 1209
+      }
+    },
+    {
+      "counters": {
+        "dotnet": {
+          "errors": 0,
+          "sent": 1667
+        },
+        "python": {
+          "errors": 0,
+          "sent": 1667
+        }
+      },
+      "dotnet": {
+        "actions": 266,
+        "audit_logs": 3866,
+        "events": 1667,
+        "failed_actions": 0,
+        "incidents": 400,
+        "queued_actions": 0,
+        "retries": 24,
+        "succeeded_actions": 266,
+        "suppressions": 1267
+      },
+      "elapsed_seconds": 1740.438,
+      "python": {
+        "actions": 266,
+        "audit_logs": 3866,
+        "events": 1667,
+        "failed_actions": 0,
+        "incidents": 400,
+        "queued_actions": 0,
+        "retries": 24,
+        "succeeded_actions": 266,
+        "suppressions": 1267
+      }
+    }
+  ],
+  "sample_seconds": 60
+}

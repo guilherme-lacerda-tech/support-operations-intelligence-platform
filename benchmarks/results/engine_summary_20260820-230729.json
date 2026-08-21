@@ -1,0 +1,257 @@
+{
+  "correctness": [
+    {
+      "dotnet": {
+        "action_failed": 2,
+        "action_succeeded": 46,
+        "actions": 48,
+        "audit_logs": 276,
+        "errors": 0,
+        "events": 100,
+        "incidents": 76,
+        "normal_events": 20,
+        "retries": 17,
+        "suppressions": 4,
+        "warning_incidents": 28
+      },
+      "equivalent": true,
+      "python": {
+        "action_failed": 2,
+        "action_succeeded": 46,
+        "actions": 48,
+        "audit_logs": 276,
+        "errors": 0,
+        "events": 100,
+        "incidents": 76,
+        "normal_events": 20,
+        "retries": 17,
+        "suppressions": 4,
+        "warning_incidents": 28
+      },
+      "wal": false,
+      "workload": "workload_100.jsonl"
+    },
+    {
+      "dotnet": {
+        "action_failed": 92,
+        "action_succeeded": 367,
+        "actions": 459,
+        "audit_logs": 2718,
+        "errors": 0,
+        "events": 1000,
+        "incidents": 735,
+        "normal_events": 200,
+        "retries": 281,
+        "suppressions": 65,
+        "warning_incidents": 276
+      },
+      "equivalent": true,
+      "python": {
+        "action_failed": 92,
+        "action_succeeded": 367,
+        "actions": 459,
+        "audit_logs": 2718,
+        "errors": 0,
+        "events": 1000,
+        "incidents": 735,
+        "normal_events": 200,
+        "retries": 281,
+        "suppressions": 65,
+        "warning_incidents": 276
+      },
+      "wal": false,
+      "workload": "workload_1000.jsonl"
+    }
+  ],
+  "raw": "benchmarks\\results\\engine_raw_20260820-230729.jsonl",
+  "summaries": [
+    {
+      "canonical": {
+        "action_failed": 2,
+        "action_succeeded": 46,
+        "actions": 48,
+        "audit_logs": 276,
+        "errors": 0,
+        "events": 100,
+        "incidents": 76,
+        "normal_events": 20,
+        "retries": 17,
+        "suppressions": 4,
+        "warning_incidents": 28
+      },
+      "cpu_ms": {
+        "max": 875.0,
+        "mean": 718.75,
+        "median": 656.25,
+        "min": 562.5,
+        "p95": 875.0
+      },
+      "elapsed_ms": {
+        "max": 1634.478,
+        "mean": 1495.589,
+        "median": 1489.71,
+        "min": 1348.044,
+        "p95": 1634.478
+      },
+      "events_per_second": {
+        "max": 74.18,
+        "mean": 67.226,
+        "median": 67.13,
+        "min": 61.18,
+        "p95": 74.18
+      },
+      "runs": 5,
+      "stack": "python",
+      "wal": false,
+      "working_set_mb": {
+        "max": 58.31,
+        "mean": 58.092,
+        "median": 58.02,
+        "min": 58.01,
+        "p95": 58.31
+      },
+      "workload": "workload_100.jsonl"
+    },
+    {
+      "canonical": {
+        "action_failed": 2,
+        "action_succeeded": 46,
+        "actions": 48,
+        "audit_logs": 276,
+        "errors": 0,
+        "events": 100,
+        "incidents": 76,
+        "normal_events": 20,
+        "retries": 17,
+        "suppressions": 4,
+        "warning_incidents": 28
+      },
+      "cpu_ms": {
+        "max": 1265.625,
+        "mean": 1134.375,
+        "median": 1078.125,
+        "min": 1031.25,
+        "p95": 1265.625
+      },
+      "elapsed_ms": {
+        "max": 1143.499,
+        "mean": 1027.565,
+        "median": 999.385,
+        "min": 943.205,
+        "p95": 1143.499
+      },
+      "events_per_second": {
+        "max": 106.02,
+        "mean": 97.78,
+        "median": 100.06,
+        "min": 87.45,
+        "p95": 106.02
+      },
+      "runs": 5,
+      "stack": "dotnet",
+      "wal": false,
+      "working_set_mb": {
+        "max": 39.09,
+        "mean": 38.98,
+        "median": 39.02,
+        "min": 38.76,
+        "p95": 39.09
+      },
+      "workload": "workload_100.jsonl"
+    },
+    {
+      "canonical": {
+        "action_failed": 92,
+        "action_succeeded": 367,
+        "actions": 459,
+        "audit_logs": 2718,
+        "errors": 0,
+        "events": 1000,
+        "incidents": 735,
+        "normal_events": 200,
+        "retries": 281,
+        "suppressions": 65,
+        "warning_incidents": 276
+      },
+      "cpu_ms": {
+        "max": 7765.625,
+        "mean": 6778.125,
+        "median": 6750.0,
+        "min": 6125.0,
+        "p95": 7765.625
+      },
+      "elapsed_ms": {
+        "max": 17023.295,
+        "mean": 15307.384,
+        "median": 14970.44,
+        "min": 14484.525,
+        "p95": 17023.295
+      },
+      "events_per_second": {
+        "max": 69.04,
+        "mean": 65.532,
+        "median": 66.8,
+        "min": 58.74,
+        "p95": 69.04
+      },
+      "runs": 5,
+      "stack": "python",
+      "wal": false,
+      "working_set_mb": {
+        "max": 61.49,
+        "mean": 61.24,
+        "median": 61.19,
+        "min": 61.0,
+        "p95": 61.49
+      },
+      "workload": "workload_1000.jsonl"
+    },
+    {
+      "canonical": {
+        "action_failed": 92,
+        "action_succeeded": 367,
+        "actions": 459,
+        "audit_logs": 2718,
+        "errors": 0,
+        "events": 1000,
+        "incidents": 735,
+        "normal_events": 200,
+        "retries": 281,
+        "suppressions": 65,
+        "warning_incidents": 276
+      },
+      "cpu_ms": {
+        "max": 8765.625,
+        "mean": 8200.0,
+        "median": 8140.625,
+        "min": 7687.5,
+        "p95": 8765.625
+      },
+      "elapsed_ms": {
+        "max": 10616.39,
+        "mean": 9660.941,
+        "median": 9527.316,
+        "min": 8605.57,
+        "p95": 10616.39
+      },
+      "events_per_second": {
+        "max": 116.2,
+        "mean": 104.084,
+        "median": 104.96,
+        "min": 94.19,
+        "p95": 116.2
+      },
+      "runs": 5,
+      "stack": "dotnet",
+      "wal": false,
+      "working_set_mb": {
+        "max": 46.69,
+        "mean": 46.598,
+        "median": 46.66,
+        "min": 46.44,
+        "p95": 46.69
+      },
+      "workload": "workload_1000.jsonl"
+    }
+  ]
+}

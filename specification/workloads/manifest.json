@@ -1,0 +1,41 @@
+{
+  "generated_by": "benchmarks/generate_workloads.py",
+  "seed_base": 20260820,
+  "workloads": [
+    {
+      "critical": 50,
+      "events": 100,
+      "file": "specification\\workloads\\workload_100.jsonl",
+      "normal": 20,
+      "warning": 30
+    },
+    {
+      "critical": 500,
+      "events": 1000,
+      "file": "specification\\workloads\\workload_1000.jsonl",
+      "normal": 200,
+      "warning": 300
+    },
+    {
+      "critical": 5000,
+      "events": 10000,
+      "file": "specification\\workloads\\workload_10000.jsonl",
+      "normal": 2000,
+      "warning": 3000
+    },
+    {
+      "critical": 25000,
+      "events": 50000,
+      "file": "specification\\workloads\\workload_50000.jsonl",
+      "normal": 10000,
+      "warning": 15000
+    },
+    {
+      "critical": 50000,
+      "events": 100000,
+      "file": "specification\\workloads\\workload_100000.jsonl",
+      "normal": 20000,
+      "warning": 30000
+    }
+  ]
+}

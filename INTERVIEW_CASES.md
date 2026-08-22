@@ -18,9 +18,9 @@ TRADE-OFF: a automacao precisou preservar rastreabilidade e validacao humana par
 
 O QUE EU FARIA EM PRODUCAO: adicionaria observabilidade, historico de execucoes, alertas de falha, versionamento de schema e testes de regressao sobre amostras controladas.
 
-## 2. Decisao Automatizada de Manutencao
+## 2. Diagnostico e Decisao Automatizada de Manutencao
 
-SITUACAO: analises de equipamentos exigiam leitura de grandes volumes de registros operacionais.
+SITUACAO: diagnosticos de equipamentos exigiam leitura de grandes volumes de registros operacionais.
 
 PROBLEMA: a decisao entre manutencao, atencao, OK ou inconclusivo dependia de interpretar muitos sinais de forma consistente.
 
@@ -88,7 +88,7 @@ SITUACAO: workloads concorrentes podem tentar criar a mesma entidade logica ou r
 
 PROBLEMA: pre-check em aplicacao nao basta; duas requisicoes podem passar na verificacao antes do commit.
 
-DECISAO: usar restricoes do banco como fonte de verdade e tratar conflitos no nivel da API.
+DECISAO: usar restricoes do banco como fonte de verdade, preservar atomicidade transacional e tratar conflitos no nivel da API.
 
 IMPLEMENTACAO: na plataforma de operacoes, `external_id` e `event_id` sao unicos; a API captura `IntegrityError` e retorna 409. No extractor, o sink carrega IDs ja escritos e pula duplicados no resume. No support, idempotency key e cooldown sao conceitos separados.
 
@@ -130,18 +130,18 @@ TRADE-OFF: alguns projetos permanecem Python-only porque converter por converter
 
 O QUE EU FARIA EM PRODUCAO: criar matriz de decisao por requisito, custo operacional, time, ecossistema, deploy, observabilidade e manutencao.
 
-## 9. PostgreSQL, Docker e Concorrencia
+## 9. PostgreSQL, Docker, Migrations e Concorrencia
 
-SITUACAO: a `operations-automation-platform` foi preparada para validar PostgreSQL via Docker Compose.
+SITUACAO: a `operations-automation-platform` precisava sair de "preparada para PostgreSQL" e provar o comportamento em PostgreSQL real via Docker Compose.
 
-PROBLEMA: neste PC, WSL nao esta instalado e o Docker Desktop nao conseguiu iniciar o daemon; portanto a validacao real com PostgreSQL ficou bloqueada.
+PROBLEMA: SQLite aceitava uma migration cujo revision id era longo demais para o limite padrao do PostgreSQL em `alembic_version.version_num`, entao a validacao real revelou uma falha que os testes rapidos nao capturavam.
 
-DECISAO: manter a afirmacao limitada ao que foi validado: Ruff OK, 10 testes Python, 96,37% coverage, Alembic em SQLite e teste de concorrencia por restricao de banco.
+DECISAO: corrigir o revision id, adicionar testes de integracao PostgreSQL opt-in e falhar explicitamente se a URL apontar para SQLite por engano.
 
-IMPLEMENTACAO: o projeto segue pronto para Compose/PostgreSQL, mas o status publico registra o blocker de ambiente.
+IMPLEMENTACAO: subi WSL2/Docker Desktop, validei `postgres:16-alpine`, criei bancos temporarios por teste, rodei Alembic de banco vazio para `head`, upgrade de `0001_initial_schema` para `head`, constraints, foreign keys, indexes, RBAC, 401/403, audit trail, readiness, metrics, logs estruturados e concorrencia com duas aplicacoes apontando para o mesmo banco.
 
-RESULTADO: e seguro dizer que ha preparacao para PostgreSQL e Docker, mas nao que a validacao real PostgreSQL/Compose passou neste PC.
+RESULTADO: validacao local com Docker Engine PASS, Docker Compose PASS, PostgreSQL 16.15 PASS, migrations PASS, concorrencia PASS, RBAC PASS, Ruff OK e 15 testes Python com 96,73% coverage.
 
-TRADE-OFF: honestidade reduz uma frase de impacto, mas aumenta confiabilidade em entrevista.
+TRADE-OFF: os testes PostgreSQL sao opt-in para manter o feedback rapido sem Docker, mas a documentacao deixa claro como executar a validacao real.
 
-O QUE EU FARIA EM PRODUCAO: ativar WSL/Docker, subir Compose, rodar migrations em PostgreSQL, repetir testes de concorrencia e documentar resultado com logs de execucao.
+O QUE EU FARIA EM PRODUCAO: rodar PostgreSQL em CI com service container, testar downgrade/rollback quando houver politica de rollback, adicionar pool sizing, tracing e metricas de lock/contention.

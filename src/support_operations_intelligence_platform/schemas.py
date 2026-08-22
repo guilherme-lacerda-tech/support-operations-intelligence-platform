@@ -1,10 +1,6 @@
 from datetime import datetime
-from typing import Literal
 
-from pydantic import BaseModel, Field, model_validator
-
-
-ExecutorMode = Literal["success", "transient_failure", "permanent_failure"]
+from pydantic import BaseModel, Field
 
 
 class AssetCreate(BaseModel):
@@ -36,24 +32,14 @@ class RuleRead(RuleCreate):
 
 
 class EventCreate(BaseModel):
-    asset_id: str | None = Field(default=None, min_length=3, max_length=80)
-    asset_external_id: str | None = Field(default=None, min_length=3, max_length=80)
+    asset_external_id: str = Field(min_length=3, max_length=80)
     source: str = Field(min_length=3, max_length=120)
     category: str = Field(min_length=2, max_length=80)
     severity: int = Field(ge=1, le=100)
     message: str = Field(min_length=5)
-    occurred_at: datetime | None = None
-    executor_mode: ExecutorMode = "success"
-
-    @model_validator(mode="after")
-    def normalize_asset_fields(self) -> "EventCreate":
-        if not self.asset_id and not self.asset_external_id:
-            raise ValueError("asset_id or asset_external_id is required")
-        if self.asset_id and not self.asset_external_id:
-            self.asset_external_id = self.asset_id
-        if self.asset_external_id and not self.asset_id:
-            self.asset_id = self.asset_external_id
-        return self
+    executor_mode: str = Field(default="success", min_length=3, max_length=40)
+    idempotency_key: str | None = Field(default=None, min_length=8, max_length=120)
+    correlation_id: str | None = Field(default=None, min_length=3, max_length=80)
 
 
 class EventRead(BaseModel):
@@ -62,8 +48,6 @@ class EventRead(BaseModel):
     category: str
     severity: int
     message: str
-    occurred_at: datetime
-    executor_mode: str
     created_at: datetime
 
     model_config = {"from_attributes": True}
@@ -72,9 +56,8 @@ class EventRead(BaseModel):
 class IncidentRead(BaseModel):
     id: int
     asset_id: int
-    rule_id: int | None
+    rule_id: int
     event_id: int
-    category: str
     state: str
     summary: str
     created_at: datetime
@@ -98,6 +81,8 @@ class ProcessResult(BaseModel):
     incident: IncidentRead | None
     action: ActionRead | None
     skipped_reason: str | None = None
+    idempotency_key: str | None = None
+    idempotent_replay: bool = False
 
 
 class JobResult(BaseModel):
@@ -106,35 +91,26 @@ class JobResult(BaseModel):
     actions_created: int
 
 
-class AuditRead(BaseModel):
+class CheckCreate(BaseModel):
+    name: str = Field(min_length=3, max_length=120)
+    asset_external_id: str = Field(min_length=3, max_length=80)
+    detail: str = Field(default="", max_length=500)
+
+
+class CheckTransition(BaseModel):
+    target_state: str = Field(min_length=3, max_length=40)
+    detail: str = Field(default="", max_length=500)
+    timeout_seconds: int | None = Field(default=None, ge=1, le=86_400)
+
+
+class CheckRead(BaseModel):
     id: int
-    event_type: str
-    entity_type: str
-    entity_id: int
-    message: str
+    name: str
+    asset_external_id: str
+    state: str
+    detail: str
+    confirmation_due_at: datetime | None
     created_at: datetime
+    updated_at: datetime
 
     model_config = {"from_attributes": True}
-
-
-class MaintenanceResult(BaseModel):
-    processed: int
-    succeeded: int
-    failed: int
-
-
-class MetricsRead(BaseModel):
-    events: int
-    incidents: int
-    actions: int
-    audit_logs: int
-    suppressions: int
-    queued_actions: int
-    succeeded_actions: int
-    failed_actions: int
-    retries: int
-
-
-class ResetResult(BaseModel):
-    deleted: dict[str, int]
-

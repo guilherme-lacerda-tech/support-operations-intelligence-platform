@@ -1,0 +1,5 @@
+{"source":"synthetic-fixture","assetId":"SYN-FIX-0001","category":"offline","severity":92,"message":"Synthetic offline event","executorMode":"success"}
+{"source":"synthetic-fixture","assetId":"SYN-FIX-0002","category":"offline","severity":90,"message":"Synthetic transient offline event","executorMode":"transient_then_success"}
+{"source":"synthetic-fixture","assetId":"SYN-FIX-0003","category":"offline","severity":95,"message":"Synthetic permanent failure event","executorMode":"permanent_failure"}
+{"source":"synthetic-fixture","assetId":"SYN-FIX-0004","category":"degraded","severity":68,"message":"Synthetic degraded event","executorMode":"success"}
+{"source":"synthetic-fixture","assetId":"SYN-FIX-0005","category":"heartbeat","severity":15,"message":"Synthetic heartbeat event","executorMode":"success"}

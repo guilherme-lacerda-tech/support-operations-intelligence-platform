@@ -1,0 +1,3522 @@
+{
+  "fixture": "work/python-vs-dotnet/shared-workload-50000.jsonl",
+  "seed": 424242,
+  "generated_at": "2026-08-21T10:26:43-0300",
+  "equivalence": {
+    "count": 1000,
+    "expected": {
+      "events": 1000,
+      "incidents": 200,
+      "actions": 150,
+      "cooldown_suppressions": 50,
+      "succeeded_actions": 100,
+      "failed_actions": 50,
+      "retry_attempts": 50,
+      "permanent_failures": 50,
+      "errors": 0
+    },
+    "python": {
+      "events": 1000,
+      "incidents": 200,
+      "actions": 150,
+      "cooldown_suppressions": 50,
+      "succeeded_actions": 100,
+      "failed_actions": 50,
+      "retry_attempts": 50,
+      "permanent_failures": 50,
+      "errors": 0
+    },
+    "dotnet": {
+      "events": 1000,
+      "incidents": 200,
+      "actions": 150,
+      "cooldown_suppressions": 50,
+      "succeeded_actions": 100,
+      "failed_actions": 50,
+      "retry_attempts": 50,
+      "permanent_failures": 50,
+      "errors": 0
+    },
+    "match": true
+  },
+  "engine": [],
+  "http": [],
+  "long_running": {
+    "durationSeconds": 1800,
+    "concurrency": 10,
+    "batchSize": 200,
+    "samples": [
+      {
+        "elapsedSeconds": 3.23,
+        "python": {
+          "process": {
+            "cpuSeconds": 3.0,
+            "workingSetMb": 81.66
+          },
+          "metrics": {
+            "events": 200,
+            "incidents": 40,
+            "actions": 30,
+            "queuedActions": 0,
+            "succeededActions": 20,
+            "failedActions": 10,
+            "permanentFailures": 10,
+            "cooldownSuppressions": 10,
+            "retryAttempts": 10,
+            "auditEntries": 230
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 3.34375,
+            "workingSetMb": 73.5
+          },
+          "metrics": {
+            "events": 200,
+            "incidents": 40,
+            "actions": 30,
+            "queuedActions": 0,
+            "succeededActions": 20,
+            "retryActions": 0,
+            "failedActions": 10,
+            "retryAttempts": 10,
+            "permanentFailures": 10,
+            "cooldownSuppressions": 10,
+            "auditEntries": 470
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 25.62,
+        "python": {
+          "process": {
+            "cpuSeconds": 15.15625,
+            "workingSetMb": 85.5
+          },
+          "metrics": {
+            "events": 1200,
+            "incidents": 240,
+            "actions": 180,
+            "queuedActions": 0,
+            "succeededActions": 120,
+            "failedActions": 60,
+            "permanentFailures": 60,
+            "cooldownSuppressions": 60,
+            "retryAttempts": 60,
+            "auditEntries": 1380
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 11.25,
+            "workingSetMb": 77.04
+          },
+          "metrics": {
+            "events": 1200,
+            "incidents": 240,
+            "actions": 180,
+            "queuedActions": 0,
+            "succeededActions": 120,
+            "retryActions": 0,
+            "failedActions": 60,
+            "retryAttempts": 60,
+            "permanentFailures": 60,
+            "cooldownSuppressions": 60,
+            "auditEntries": 2820
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 43.86,
+        "python": {
+          "process": {
+            "cpuSeconds": 25.75,
+            "workingSetMb": 83.93
+          },
+          "metrics": {
+            "events": 2200,
+            "incidents": 440,
+            "actions": 330,
+            "queuedActions": 0,
+            "succeededActions": 220,
+            "failedActions": 110,
+            "permanentFailures": 110,
+            "cooldownSuppressions": 110,
+            "retryAttempts": 110,
+            "auditEntries": 2530
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 13.96875,
+            "workingSetMb": 76.92
+          },
+          "metrics": {
+            "events": 2200,
+            "incidents": 440,
+            "actions": 330,
+            "queuedActions": 0,
+            "succeededActions": 220,
+            "retryActions": 0,
+            "failedActions": 110,
+            "retryAttempts": 110,
+            "permanentFailures": 110,
+            "cooldownSuppressions": 110,
+            "auditEntries": 5170
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 61.05,
+        "python": {
+          "process": {
+            "cpuSeconds": 35.046875,
+            "workingSetMb": 88.33
+          },
+          "metrics": {
+            "events": 3200,
+            "incidents": 640,
+            "actions": 480,
+            "queuedActions": 0,
+            "succeededActions": 320,
+            "failedActions": 160,
+            "permanentFailures": 160,
+            "cooldownSuppressions": 160,
+            "retryAttempts": 160,
+            "auditEntries": 3680
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 16.84375,
+            "workingSetMb": 78.16
+          },
+          "metrics": {
+            "events": 3200,
+            "incidents": 640,
+            "actions": 480,
+            "queuedActions": 0,
+            "succeededActions": 320,
+            "retryActions": 0,
+            "failedActions": 160,
+            "retryAttempts": 160,
+            "permanentFailures": 160,
+            "cooldownSuppressions": 160,
+            "auditEntries": 7520
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 78.11,
+        "python": {
+          "process": {
+            "cpuSeconds": 45.328125,
+            "workingSetMb": 86.96
+          },
+          "metrics": {
+            "events": 4200,
+            "incidents": 840,
+            "actions": 630,
+            "queuedActions": 0,
+            "succeededActions": 420,
+            "failedActions": 210,
+            "permanentFailures": 210,
+            "cooldownSuppressions": 210,
+            "retryAttempts": 210,
+            "auditEntries": 4830
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 19.71875,
+            "workingSetMb": 77.51
+          },
+          "metrics": {
+            "events": 4200,
+            "incidents": 840,
+            "actions": 630,
+            "queuedActions": 0,
+            "succeededActions": 420,
+            "retryActions": 0,
+            "failedActions": 210,
+            "retryAttempts": 210,
+            "permanentFailures": 210,
+            "cooldownSuppressions": 210,
+            "auditEntries": 9870
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 102.42,
+        "python": {
+          "process": {
+            "cpuSeconds": 57.46875,
+            "workingSetMb": 90.03
+          },
+          "metrics": {
+            "events": 5200,
+            "incidents": 1040,
+            "actions": 780,
+            "queuedActions": 0,
+            "succeededActions": 520,
+            "failedActions": 260,
+            "permanentFailures": 260,
+            "cooldownSuppressions": 260,
+            "retryAttempts": 260,
+            "auditEntries": 5980
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 23.078125,
+            "workingSetMb": 76.97
+          },
+          "metrics": {
+            "events": 5200,
+            "incidents": 1040,
+            "actions": 780,
+            "queuedActions": 0,
+            "succeededActions": 520,
+            "retryActions": 0,
+            "failedActions": 260,
+            "retryAttempts": 260,
+            "permanentFailures": 260,
+            "cooldownSuppressions": 260,
+            "auditEntries": 12220
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 120.83,
+        "python": {
+          "process": {
+            "cpuSeconds": 68.65625,
+            "workingSetMb": 87.76
+          },
+          "metrics": {
+            "events": 6200,
+            "incidents": 1240,
+            "actions": 930,
+            "queuedActions": 0,
+            "succeededActions": 620,
+            "failedActions": 310,
+            "permanentFailures": 310,
+            "cooldownSuppressions": 310,
+            "retryAttempts": 310,
+            "auditEntries": 7130
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 26.25,
+            "workingSetMb": 77.61
+          },
+          "metrics": {
+            "events": 6200,
+            "incidents": 1240,
+            "actions": 930,
+            "queuedActions": 0,
+            "succeededActions": 620,
+            "retryActions": 0,
+            "failedActions": 310,
+            "retryAttempts": 310,
+            "permanentFailures": 310,
+            "cooldownSuppressions": 310,
+            "auditEntries": 14570
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 139.17,
+        "python": {
+          "process": {
+            "cpuSeconds": 80.0625,
+            "workingSetMb": 86.48
+          },
+          "metrics": {
+            "events": 7200,
+            "incidents": 1440,
+            "actions": 1080,
+            "queuedActions": 0,
+            "succeededActions": 720,
+            "failedActions": 360,
+            "permanentFailures": 360,
+            "cooldownSuppressions": 360,
+            "retryAttempts": 360,
+            "auditEntries": 8280
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 29.53125,
+            "workingSetMb": 77.64
+          },
+          "metrics": {
+            "events": 7200,
+            "incidents": 1440,
+            "actions": 1080,
+            "queuedActions": 0,
+            "succeededActions": 720,
+            "retryActions": 0,
+            "failedActions": 360,
+            "retryAttempts": 360,
+            "permanentFailures": 360,
+            "cooldownSuppressions": 360,
+            "auditEntries": 16920
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 156.98,
+        "python": {
+          "process": {
+            "cpuSeconds": 90.546875,
+            "workingSetMb": 90.71
+          },
+          "metrics": {
+            "events": 8200,
+            "incidents": 1640,
+            "actions": 1230,
+            "queuedActions": 0,
+            "succeededActions": 820,
+            "failedActions": 410,
+            "permanentFailures": 410,
+            "cooldownSuppressions": 410,
+            "retryAttempts": 410,
+            "auditEntries": 9430
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 32.53125,
+            "workingSetMb": 78.25
+          },
+          "metrics": {
+            "events": 8200,
+            "incidents": 1640,
+            "actions": 1230,
+            "queuedActions": 0,
+            "succeededActions": 820,
+            "retryActions": 0,
+            "failedActions": 410,
+            "retryAttempts": 410,
+            "permanentFailures": 410,
+            "cooldownSuppressions": 410,
+            "auditEntries": 19270
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 175.64,
+        "python": {
+          "process": {
+            "cpuSeconds": 100.875,
+            "workingSetMb": 87.77
+          },
+          "metrics": {
+            "events": 9200,
+            "incidents": 1840,
+            "actions": 1380,
+            "queuedActions": 0,
+            "succeededActions": 920,
+            "failedActions": 460,
+            "permanentFailures": 460,
+            "cooldownSuppressions": 460,
+            "retryAttempts": 460,
+            "auditEntries": 10580
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 36.34375,
+            "workingSetMb": 77.89
+          },
+          "metrics": {
+            "events": 9200,
+            "incidents": 1840,
+            "actions": 1380,
+            "queuedActions": 0,
+            "succeededActions": 920,
+            "retryActions": 0,
+            "failedActions": 460,
+            "retryAttempts": 460,
+            "permanentFailures": 460,
+            "cooldownSuppressions": 460,
+            "auditEntries": 21620
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 195.43,
+        "python": {
+          "process": {
+            "cpuSeconds": 111.28125,
+            "workingSetMb": 84.95
+          },
+          "metrics": {
+            "events": 10200,
+            "incidents": 2040,
+            "actions": 1530,
+            "queuedActions": 0,
+            "succeededActions": 1020,
+            "failedActions": 510,
+            "permanentFailures": 510,
+            "cooldownSuppressions": 510,
+            "retryAttempts": 510,
+            "auditEntries": 11730
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 40.140625,
+            "workingSetMb": 78.37
+          },
+          "metrics": {
+            "events": 10200,
+            "incidents": 2040,
+            "actions": 1530,
+            "queuedActions": 0,
+            "succeededActions": 1020,
+            "retryActions": 0,
+            "failedActions": 510,
+            "retryAttempts": 510,
+            "permanentFailures": 510,
+            "cooldownSuppressions": 510,
+            "auditEntries": 23970
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 214.54,
+        "python": {
+          "process": {
+            "cpuSeconds": 122.078125,
+            "workingSetMb": 88.87
+          },
+          "metrics": {
+            "events": 11200,
+            "incidents": 2240,
+            "actions": 1680,
+            "queuedActions": 0,
+            "succeededActions": 1120,
+            "failedActions": 560,
+            "permanentFailures": 560,
+            "cooldownSuppressions": 560,
+            "retryAttempts": 560,
+            "auditEntries": 12880
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 44.0625,
+            "workingSetMb": 77.86
+          },
+          "metrics": {
+            "events": 11200,
+            "incidents": 2240,
+            "actions": 1680,
+            "queuedActions": 0,
+            "succeededActions": 1120,
+            "retryActions": 0,
+            "failedActions": 560,
+            "retryAttempts": 560,
+            "permanentFailures": 560,
+            "cooldownSuppressions": 560,
+            "auditEntries": 26320
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 235.16,
+        "python": {
+          "process": {
+            "cpuSeconds": 132.6875,
+            "workingSetMb": 88.02
+          },
+          "metrics": {
+            "events": 12200,
+            "incidents": 2440,
+            "actions": 1830,
+            "queuedActions": 0,
+            "succeededActions": 1220,
+            "failedActions": 610,
+            "permanentFailures": 610,
+            "cooldownSuppressions": 610,
+            "retryAttempts": 610,
+            "auditEntries": 14030
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 47.75,
+            "workingSetMb": 78.25
+          },
+          "metrics": {
+            "events": 12200,
+            "incidents": 2440,
+            "actions": 1830,
+            "queuedActions": 0,
+            "succeededActions": 1220,
+            "retryActions": 0,
+            "failedActions": 610,
+            "retryAttempts": 610,
+            "permanentFailures": 610,
+            "cooldownSuppressions": 610,
+            "auditEntries": 28670
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 255.92,
+        "python": {
+          "process": {
+            "cpuSeconds": 144.796875,
+            "workingSetMb": 93.29
+          },
+          "metrics": {
+            "events": 13200,
+            "incidents": 2640,
+            "actions": 1980,
+            "queuedActions": 0,
+            "succeededActions": 1320,
+            "failedActions": 660,
+            "permanentFailures": 660,
+            "cooldownSuppressions": 660,
+            "retryAttempts": 660,
+            "auditEntries": 15180
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 51.109375,
+            "workingSetMb": 78.26
+          },
+          "metrics": {
+            "events": 13200,
+            "incidents": 2640,
+            "actions": 1980,
+            "queuedActions": 0,
+            "succeededActions": 1320,
+            "retryActions": 0,
+            "failedActions": 660,
+            "retryAttempts": 660,
+            "permanentFailures": 660,
+            "cooldownSuppressions": 660,
+            "auditEntries": 31020
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 275.97,
+        "python": {
+          "process": {
+            "cpuSeconds": 155.890625,
+            "workingSetMb": 88.43
+          },
+          "metrics": {
+            "events": 14200,
+            "incidents": 2840,
+            "actions": 2130,
+            "queuedActions": 0,
+            "succeededActions": 1420,
+            "failedActions": 710,
+            "permanentFailures": 710,
+            "cooldownSuppressions": 710,
+            "retryAttempts": 710,
+            "auditEntries": 16330
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 54.28125,
+            "workingSetMb": 79.54
+          },
+          "metrics": {
+            "events": 14200,
+            "incidents": 2840,
+            "actions": 2130,
+            "queuedActions": 0,
+            "succeededActions": 1420,
+            "retryActions": 0,
+            "failedActions": 710,
+            "retryAttempts": 710,
+            "permanentFailures": 710,
+            "cooldownSuppressions": 710,
+            "auditEntries": 33370
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 294.56,
+        "python": {
+          "process": {
+            "cpuSeconds": 166.59375,
+            "workingSetMb": 87.2
+          },
+          "metrics": {
+            "events": 15200,
+            "incidents": 3040,
+            "actions": 2280,
+            "queuedActions": 0,
+            "succeededActions": 1520,
+            "failedActions": 760,
+            "permanentFailures": 760,
+            "cooldownSuppressions": 760,
+            "retryAttempts": 760,
+            "auditEntries": 17480
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 58.125,
+            "workingSetMb": 79.78
+          },
+          "metrics": {
+            "events": 15200,
+            "incidents": 3040,
+            "actions": 2280,
+            "queuedActions": 0,
+            "succeededActions": 1520,
+            "retryActions": 0,
+            "failedActions": 760,
+            "retryAttempts": 760,
+            "permanentFailures": 760,
+            "cooldownSuppressions": 760,
+            "auditEntries": 35720
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 317.11,
+        "python": {
+          "process": {
+            "cpuSeconds": 177.859375,
+            "workingSetMb": 92.73
+          },
+          "metrics": {
+            "events": 16200,
+            "incidents": 3240,
+            "actions": 2430,
+            "queuedActions": 0,
+            "succeededActions": 1620,
+            "failedActions": 810,
+            "permanentFailures": 810,
+            "cooldownSuppressions": 810,
+            "retryAttempts": 810,
+            "auditEntries": 18630
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 62.90625,
+            "workingSetMb": 79.79
+          },
+          "metrics": {
+            "events": 16200,
+            "incidents": 3240,
+            "actions": 2430,
+            "queuedActions": 0,
+            "succeededActions": 1620,
+            "retryActions": 0,
+            "failedActions": 810,
+            "retryAttempts": 810,
+            "permanentFailures": 810,
+            "cooldownSuppressions": 810,
+            "auditEntries": 38070
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 341.55,
+        "python": {
+          "process": {
+            "cpuSeconds": 189.6875,
+            "workingSetMb": 91.68
+          },
+          "metrics": {
+            "events": 17200,
+            "incidents": 3440,
+            "actions": 2580,
+            "queuedActions": 0,
+            "succeededActions": 1720,
+            "failedActions": 860,
+            "permanentFailures": 860,
+            "cooldownSuppressions": 860,
+            "retryAttempts": 860,
+            "auditEntries": 19780
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 66.3125,
+            "workingSetMb": 79.73
+          },
+          "metrics": {
+            "events": 17200,
+            "incidents": 3440,
+            "actions": 2580,
+            "queuedActions": 0,
+            "succeededActions": 1720,
+            "retryActions": 0,
+            "failedActions": 860,
+            "retryAttempts": 860,
+            "permanentFailures": 860,
+            "cooldownSuppressions": 860,
+            "auditEntries": 40420
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 360.04,
+        "python": {
+          "process": {
+            "cpuSeconds": 199.984375,
+            "workingSetMb": 89.59
+          },
+          "metrics": {
+            "events": 18200,
+            "incidents": 3640,
+            "actions": 2730,
+            "queuedActions": 0,
+            "succeededActions": 1820,
+            "failedActions": 910,
+            "permanentFailures": 910,
+            "cooldownSuppressions": 910,
+            "retryAttempts": 910,
+            "auditEntries": 20930
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 68.96875,
+            "workingSetMb": 80.92
+          },
+          "metrics": {
+            "events": 18200,
+            "incidents": 3640,
+            "actions": 2730,
+            "queuedActions": 0,
+            "succeededActions": 1820,
+            "retryActions": 0,
+            "failedActions": 910,
+            "retryAttempts": 910,
+            "permanentFailures": 910,
+            "cooldownSuppressions": 910,
+            "auditEntries": 42770
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 380.08,
+        "python": {
+          "process": {
+            "cpuSeconds": 211.328125,
+            "workingSetMb": 93.16
+          },
+          "metrics": {
+            "events": 19200,
+            "incidents": 3840,
+            "actions": 2880,
+            "queuedActions": 0,
+            "succeededActions": 1920,
+            "failedActions": 960,
+            "permanentFailures": 960,
+            "cooldownSuppressions": 960,
+            "retryAttempts": 960,
+            "auditEntries": 22080
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 72.328125,
+            "workingSetMb": 79.57
+          },
+          "metrics": {
+            "events": 19200,
+            "incidents": 3840,
+            "actions": 2880,
+            "queuedActions": 0,
+            "succeededActions": 1920,
+            "retryActions": 0,
+            "failedActions": 960,
+            "retryAttempts": 960,
+            "permanentFailures": 960,
+            "cooldownSuppressions": 960,
+            "auditEntries": 45120
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 399.67,
+        "python": {
+          "process": {
+            "cpuSeconds": 223.046875,
+            "workingSetMb": 90.41
+          },
+          "metrics": {
+            "events": 20200,
+            "incidents": 4040,
+            "actions": 3030,
+            "queuedActions": 0,
+            "succeededActions": 2020,
+            "failedActions": 1010,
+            "permanentFailures": 1010,
+            "cooldownSuppressions": 1010,
+            "retryAttempts": 1010,
+            "auditEntries": 23230
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 75.390625,
+            "workingSetMb": 80.0
+          },
+          "metrics": {
+            "events": 20200,
+            "incidents": 4040,
+            "actions": 3030,
+            "queuedActions": 0,
+            "succeededActions": 2020,
+            "retryActions": 0,
+            "failedActions": 1010,
+            "retryAttempts": 1010,
+            "permanentFailures": 1010,
+            "cooldownSuppressions": 1010,
+            "auditEntries": 47470
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 418.65,
+        "python": {
+          "process": {
+            "cpuSeconds": 233.421875,
+            "workingSetMb": 88.58
+          },
+          "metrics": {
+            "events": 21200,
+            "incidents": 4240,
+            "actions": 3180,
+            "queuedActions": 0,
+            "succeededActions": 2120,
+            "failedActions": 1060,
+            "permanentFailures": 1060,
+            "cooldownSuppressions": 1060,
+            "retryAttempts": 1060,
+            "auditEntries": 24380
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 78.359375,
+            "workingSetMb": 79.77
+          },
+          "metrics": {
+            "events": 21200,
+            "incidents": 4240,
+            "actions": 3180,
+            "queuedActions": 0,
+            "succeededActions": 2120,
+            "retryActions": 0,
+            "failedActions": 1060,
+            "retryAttempts": 1060,
+            "permanentFailures": 1060,
+            "cooldownSuppressions": 1060,
+            "auditEntries": 49820
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 440.35,
+        "python": {
+          "process": {
+            "cpuSeconds": 246.1875,
+            "workingSetMb": 92.73
+          },
+          "metrics": {
+            "events": 22200,
+            "incidents": 4440,
+            "actions": 3330,
+            "queuedActions": 0,
+            "succeededActions": 2220,
+            "failedActions": 1110,
+            "permanentFailures": 1110,
+            "cooldownSuppressions": 1110,
+            "retryAttempts": 1110,
+            "auditEntries": 25530
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 82.296875,
+            "workingSetMb": 79.93
+          },
+          "metrics": {
+            "events": 22200,
+            "incidents": 4440,
+            "actions": 3330,
+            "queuedActions": 0,
+            "succeededActions": 2220,
+            "retryActions": 0,
+            "failedActions": 1110,
+            "retryAttempts": 1110,
+            "permanentFailures": 1110,
+            "cooldownSuppressions": 1110,
+            "auditEntries": 52170
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 463.03,
+        "python": {
+          "process": {
+            "cpuSeconds": 259.78125,
+            "workingSetMb": 92.42
+          },
+          "metrics": {
+            "events": 23200,
+            "incidents": 4640,
+            "actions": 3480,
+            "queuedActions": 0,
+            "succeededActions": 2320,
+            "failedActions": 1160,
+            "permanentFailures": 1160,
+            "cooldownSuppressions": 1160,
+            "retryAttempts": 1160,
+            "auditEntries": 26680
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 86.71875,
+            "workingSetMb": 81.32
+          },
+          "metrics": {
+            "events": 23200,
+            "incidents": 4640,
+            "actions": 3480,
+            "queuedActions": 0,
+            "succeededActions": 2320,
+            "retryActions": 0,
+            "failedActions": 1160,
+            "retryAttempts": 1160,
+            "permanentFailures": 1160,
+            "cooldownSuppressions": 1160,
+            "auditEntries": 54520
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 490.48,
+        "python": {
+          "process": {
+            "cpuSeconds": 273.859375,
+            "workingSetMb": 87.23
+          },
+          "metrics": {
+            "events": 24200,
+            "incidents": 4840,
+            "actions": 3630,
+            "queuedActions": 0,
+            "succeededActions": 2420,
+            "failedActions": 1210,
+            "permanentFailures": 1210,
+            "cooldownSuppressions": 1210,
+            "retryAttempts": 1210,
+            "auditEntries": 27830
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 91.984375,
+            "workingSetMb": 81.4
+          },
+          "metrics": {
+            "events": 24200,
+            "incidents": 4840,
+            "actions": 3630,
+            "queuedActions": 0,
+            "succeededActions": 2420,
+            "retryActions": 0,
+            "failedActions": 1210,
+            "retryAttempts": 1210,
+            "permanentFailures": 1210,
+            "cooldownSuppressions": 1210,
+            "auditEntries": 56870
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 512.95,
+        "python": {
+          "process": {
+            "cpuSeconds": 286.875,
+            "workingSetMb": 92.31
+          },
+          "metrics": {
+            "events": 25200,
+            "incidents": 5040,
+            "actions": 3780,
+            "queuedActions": 0,
+            "succeededActions": 2520,
+            "failedActions": 1260,
+            "permanentFailures": 1260,
+            "cooldownSuppressions": 1260,
+            "retryAttempts": 1260,
+            "auditEntries": 28980
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 96.0,
+            "workingSetMb": 81.53
+          },
+          "metrics": {
+            "events": 25200,
+            "incidents": 5040,
+            "actions": 3780,
+            "queuedActions": 0,
+            "succeededActions": 2520,
+            "retryActions": 0,
+            "failedActions": 1260,
+            "retryAttempts": 1260,
+            "permanentFailures": 1260,
+            "cooldownSuppressions": 1260,
+            "auditEntries": 59220
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 533.31,
+        "python": {
+          "process": {
+            "cpuSeconds": 299.25,
+            "workingSetMb": 89.0
+          },
+          "metrics": {
+            "events": 26200,
+            "incidents": 5240,
+            "actions": 3930,
+            "queuedActions": 0,
+            "succeededActions": 2620,
+            "failedActions": 1310,
+            "permanentFailures": 1310,
+            "cooldownSuppressions": 1310,
+            "retryAttempts": 1310,
+            "auditEntries": 30130
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 99.65625,
+            "workingSetMb": 81.1
+          },
+          "metrics": {
+            "events": 26200,
+            "incidents": 5240,
+            "actions": 3930,
+            "queuedActions": 0,
+            "succeededActions": 2620,
+            "retryActions": 0,
+            "failedActions": 1310,
+            "retryAttempts": 1310,
+            "permanentFailures": 1310,
+            "cooldownSuppressions": 1310,
+            "auditEntries": 61570
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 553.42,
+        "python": {
+          "process": {
+            "cpuSeconds": 310.6875,
+            "workingSetMb": 93.82
+          },
+          "metrics": {
+            "events": 27200,
+            "incidents": 5440,
+            "actions": 4080,
+            "queuedActions": 0,
+            "succeededActions": 2720,
+            "failedActions": 1360,
+            "permanentFailures": 1360,
+            "cooldownSuppressions": 1360,
+            "retryAttempts": 1360,
+            "auditEntries": 31280
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 103.3125,
+            "workingSetMb": 81.64
+          },
+          "metrics": {
+            "events": 27200,
+            "incidents": 5440,
+            "actions": 4080,
+            "queuedActions": 0,
+            "succeededActions": 2720,
+            "retryActions": 0,
+            "failedActions": 1360,
+            "retryAttempts": 1360,
+            "permanentFailures": 1360,
+            "cooldownSuppressions": 1360,
+            "auditEntries": 63920
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 571.56,
+        "python": {
+          "process": {
+            "cpuSeconds": 321.96875,
+            "workingSetMb": 93.59
+          },
+          "metrics": {
+            "events": 28200,
+            "incidents": 5640,
+            "actions": 4230,
+            "queuedActions": 0,
+            "succeededActions": 2820,
+            "failedActions": 1410,
+            "permanentFailures": 1410,
+            "cooldownSuppressions": 1410,
+            "retryAttempts": 1410,
+            "auditEntries": 32430
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 106.5,
+            "workingSetMb": 81.55
+          },
+          "metrics": {
+            "events": 28200,
+            "incidents": 5640,
+            "actions": 4230,
+            "queuedActions": 0,
+            "succeededActions": 2820,
+            "retryActions": 0,
+            "failedActions": 1410,
+            "retryAttempts": 1410,
+            "permanentFailures": 1410,
+            "cooldownSuppressions": 1410,
+            "auditEntries": 66270
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 593.64,
+        "python": {
+          "process": {
+            "cpuSeconds": 335.15625,
+            "workingSetMb": 90.88
+          },
+          "metrics": {
+            "events": 29200,
+            "incidents": 5840,
+            "actions": 4380,
+            "queuedActions": 0,
+            "succeededActions": 2920,
+            "failedActions": 1460,
+            "permanentFailures": 1460,
+            "cooldownSuppressions": 1460,
+            "retryAttempts": 1460,
+            "auditEntries": 33580
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 111.0,
+            "workingSetMb": 81.44
+          },
+          "metrics": {
+            "events": 29200,
+            "incidents": 5840,
+            "actions": 4380,
+            "queuedActions": 0,
+            "succeededActions": 2920,
+            "retryActions": 0,
+            "failedActions": 1460,
+            "retryAttempts": 1460,
+            "permanentFailures": 1460,
+            "cooldownSuppressions": 1460,
+            "auditEntries": 68620
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 614.62,
+        "python": {
+          "process": {
+            "cpuSeconds": 347.34375,
+            "workingSetMb": 93.85
+          },
+          "metrics": {
+            "events": 30200,
+            "incidents": 6040,
+            "actions": 4530,
+            "queuedActions": 0,
+            "succeededActions": 3020,
+            "failedActions": 1510,
+            "permanentFailures": 1510,
+            "cooldownSuppressions": 1510,
+            "retryAttempts": 1510,
+            "auditEntries": 34730
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 114.484375,
+            "workingSetMb": 83.61
+          },
+          "metrics": {
+            "events": 30200,
+            "incidents": 6040,
+            "actions": 4530,
+            "queuedActions": 0,
+            "succeededActions": 3020,
+            "retryActions": 0,
+            "failedActions": 1510,
+            "retryAttempts": 1510,
+            "permanentFailures": 1510,
+            "cooldownSuppressions": 1510,
+            "auditEntries": 70970
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 632.79,
+        "python": {
+          "process": {
+            "cpuSeconds": 357.953125,
+            "workingSetMb": 93.43
+          },
+          "metrics": {
+            "events": 31200,
+            "incidents": 6240,
+            "actions": 4680,
+            "queuedActions": 0,
+            "succeededActions": 3120,
+            "failedActions": 1560,
+            "permanentFailures": 1560,
+            "cooldownSuppressions": 1560,
+            "retryAttempts": 1560,
+            "auditEntries": 35880
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 117.9375,
+            "workingSetMb": 83.01
+          },
+          "metrics": {
+            "events": 31200,
+            "incidents": 6240,
+            "actions": 4680,
+            "queuedActions": 0,
+            "succeededActions": 3120,
+            "retryActions": 0,
+            "failedActions": 1560,
+            "retryAttempts": 1560,
+            "permanentFailures": 1560,
+            "cooldownSuppressions": 1560,
+            "auditEntries": 73320
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 650.9,
+        "python": {
+          "process": {
+            "cpuSeconds": 368.34375,
+            "workingSetMb": 90.86
+          },
+          "metrics": {
+            "events": 32200,
+            "incidents": 6440,
+            "actions": 4830,
+            "queuedActions": 0,
+            "succeededActions": 3220,
+            "failedActions": 1610,
+            "permanentFailures": 1610,
+            "cooldownSuppressions": 1610,
+            "retryAttempts": 1610,
+            "auditEntries": 37030
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 121.40625,
+            "workingSetMb": 83.34
+          },
+          "metrics": {
+            "events": 32200,
+            "incidents": 6440,
+            "actions": 4830,
+            "queuedActions": 0,
+            "succeededActions": 3220,
+            "retryActions": 0,
+            "failedActions": 1610,
+            "retryAttempts": 1610,
+            "permanentFailures": 1610,
+            "cooldownSuppressions": 1610,
+            "auditEntries": 75670
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 669.44,
+        "python": {
+          "process": {
+            "cpuSeconds": 379.203125,
+            "workingSetMb": 93.04
+          },
+          "metrics": {
+            "events": 33200,
+            "incidents": 6640,
+            "actions": 4980,
+            "queuedActions": 0,
+            "succeededActions": 3320,
+            "failedActions": 1660,
+            "permanentFailures": 1660,
+            "cooldownSuppressions": 1660,
+            "retryAttempts": 1660,
+            "auditEntries": 38180
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 124.578125,
+            "workingSetMb": 83.44
+          },
+          "metrics": {
+            "events": 33200,
+            "incidents": 6640,
+            "actions": 4980,
+            "queuedActions": 0,
+            "succeededActions": 3320,
+            "retryActions": 0,
+            "failedActions": 1660,
+            "retryAttempts": 1660,
+            "permanentFailures": 1660,
+            "cooldownSuppressions": 1660,
+            "auditEntries": 78020
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 687.95,
+        "python": {
+          "process": {
+            "cpuSeconds": 390.296875,
+            "workingSetMb": 90.98
+          },
+          "metrics": {
+            "events": 34200,
+            "incidents": 6840,
+            "actions": 5130,
+            "queuedActions": 0,
+            "succeededActions": 3420,
+            "failedActions": 1710,
+            "permanentFailures": 1710,
+            "cooldownSuppressions": 1710,
+            "retryAttempts": 1710,
+            "auditEntries": 39330
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 128.328125,
+            "workingSetMb": 83.08
+          },
+          "metrics": {
+            "events": 34200,
+            "incidents": 6840,
+            "actions": 5130,
+            "queuedActions": 0,
+            "succeededActions": 3420,
+            "retryActions": 0,
+            "failedActions": 1710,
+            "retryAttempts": 1710,
+            "permanentFailures": 1710,
+            "cooldownSuppressions": 1710,
+            "auditEntries": 80370
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 711.24,
+        "python": {
+          "process": {
+            "cpuSeconds": 403.90625,
+            "workingSetMb": 88.58
+          },
+          "metrics": {
+            "events": 35200,
+            "incidents": 7040,
+            "actions": 5280,
+            "queuedActions": 0,
+            "succeededActions": 3520,
+            "failedActions": 1760,
+            "permanentFailures": 1760,
+            "cooldownSuppressions": 1760,
+            "retryAttempts": 1760,
+            "auditEntries": 40480
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 132.40625,
+            "workingSetMb": 83.28
+          },
+          "metrics": {
+            "events": 35200,
+            "incidents": 7040,
+            "actions": 5280,
+            "queuedActions": 0,
+            "succeededActions": 3520,
+            "retryActions": 0,
+            "failedActions": 1760,
+            "retryAttempts": 1760,
+            "permanentFailures": 1760,
+            "cooldownSuppressions": 1760,
+            "auditEntries": 82720
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 731.69,
+        "python": {
+          "process": {
+            "cpuSeconds": 415.453125,
+            "workingSetMb": 93.79
+          },
+          "metrics": {
+            "events": 36200,
+            "incidents": 7240,
+            "actions": 5430,
+            "queuedActions": 0,
+            "succeededActions": 3620,
+            "failedActions": 1810,
+            "permanentFailures": 1810,
+            "cooldownSuppressions": 1810,
+            "retryAttempts": 1810,
+            "auditEntries": 41630
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 136.46875,
+            "workingSetMb": 83.06
+          },
+          "metrics": {
+            "events": 36200,
+            "incidents": 7240,
+            "actions": 5430,
+            "queuedActions": 0,
+            "succeededActions": 3620,
+            "retryActions": 0,
+            "failedActions": 1810,
+            "retryAttempts": 1810,
+            "permanentFailures": 1810,
+            "cooldownSuppressions": 1810,
+            "auditEntries": 85070
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 751.36,
+        "python": {
+          "process": {
+            "cpuSeconds": 426.65625,
+            "workingSetMb": 91.83
+          },
+          "metrics": {
+            "events": 37200,
+            "incidents": 7440,
+            "actions": 5580,
+            "queuedActions": 0,
+            "succeededActions": 3720,
+            "failedActions": 1860,
+            "permanentFailures": 1860,
+            "cooldownSuppressions": 1860,
+            "retryAttempts": 1860,
+            "auditEntries": 42780
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 139.640625,
+            "workingSetMb": 83.32
+          },
+          "metrics": {
+            "events": 37200,
+            "incidents": 7440,
+            "actions": 5580,
+            "queuedActions": 0,
+            "succeededActions": 3720,
+            "retryActions": 0,
+            "failedActions": 1860,
+            "retryAttempts": 1860,
+            "permanentFailures": 1860,
+            "cooldownSuppressions": 1860,
+            "auditEntries": 87420
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 772.85,
+        "python": {
+          "process": {
+            "cpuSeconds": 439.515625,
+            "workingSetMb": 93.91
+          },
+          "metrics": {
+            "events": 38200,
+            "incidents": 7640,
+            "actions": 5730,
+            "queuedActions": 0,
+            "succeededActions": 3820,
+            "failedActions": 1910,
+            "permanentFailures": 1910,
+            "cooldownSuppressions": 1910,
+            "retryAttempts": 1910,
+            "auditEntries": 43930
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 144.59375,
+            "workingSetMb": 84.54
+          },
+          "metrics": {
+            "events": 38200,
+            "incidents": 7640,
+            "actions": 5730,
+            "queuedActions": 0,
+            "succeededActions": 3820,
+            "retryActions": 0,
+            "failedActions": 1910,
+            "retryAttempts": 1910,
+            "permanentFailures": 1910,
+            "cooldownSuppressions": 1910,
+            "auditEntries": 89770
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 803.73,
+        "python": {
+          "process": {
+            "cpuSeconds": 456.1875,
+            "workingSetMb": 91.93
+          },
+          "metrics": {
+            "events": 39200,
+            "incidents": 7840,
+            "actions": 5880,
+            "queuedActions": 0,
+            "succeededActions": 3920,
+            "failedActions": 1960,
+            "permanentFailures": 1960,
+            "cooldownSuppressions": 1960,
+            "retryAttempts": 1960,
+            "auditEntries": 45080
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 150.15625,
+            "workingSetMb": 84.61
+          },
+          "metrics": {
+            "events": 39200,
+            "incidents": 7840,
+            "actions": 5880,
+            "queuedActions": 0,
+            "succeededActions": 3920,
+            "retryActions": 0,
+            "failedActions": 1960,
+            "retryAttempts": 1960,
+            "permanentFailures": 1960,
+            "cooldownSuppressions": 1960,
+            "auditEntries": 92120
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 826.49,
+        "python": {
+          "process": {
+            "cpuSeconds": 470.0625,
+            "workingSetMb": 90.82
+          },
+          "metrics": {
+            "events": 40200,
+            "incidents": 8040,
+            "actions": 6030,
+            "queuedActions": 0,
+            "succeededActions": 4020,
+            "failedActions": 2010,
+            "permanentFailures": 2010,
+            "cooldownSuppressions": 2010,
+            "retryAttempts": 2010,
+            "auditEntries": 46230
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 154.578125,
+            "workingSetMb": 85.15
+          },
+          "metrics": {
+            "events": 40200,
+            "incidents": 8040,
+            "actions": 6030,
+            "queuedActions": 0,
+            "succeededActions": 4020,
+            "retryActions": 0,
+            "failedActions": 2010,
+            "retryAttempts": 2010,
+            "permanentFailures": 2010,
+            "cooldownSuppressions": 2010,
+            "auditEntries": 94470
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 849.51,
+        "python": {
+          "process": {
+            "cpuSeconds": 484.640625,
+            "workingSetMb": 96.51
+          },
+          "metrics": {
+            "events": 41200,
+            "incidents": 8240,
+            "actions": 6180,
+            "queuedActions": 0,
+            "succeededActions": 4120,
+            "failedActions": 2060,
+            "permanentFailures": 2060,
+            "cooldownSuppressions": 2060,
+            "retryAttempts": 2060,
+            "auditEntries": 47380
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 158.53125,
+            "workingSetMb": 84.84
+          },
+          "metrics": {
+            "events": 41200,
+            "incidents": 8240,
+            "actions": 6180,
+            "queuedActions": 0,
+            "succeededActions": 4120,
+            "retryActions": 0,
+            "failedActions": 2060,
+            "retryAttempts": 2060,
+            "permanentFailures": 2060,
+            "cooldownSuppressions": 2060,
+            "auditEntries": 96820
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 872.61,
+        "python": {
+          "process": {
+            "cpuSeconds": 496.4375,
+            "workingSetMb": 93.11
+          },
+          "metrics": {
+            "events": 42200,
+            "incidents": 8440,
+            "actions": 6330,
+            "queuedActions": 0,
+            "succeededActions": 4220,
+            "failedActions": 2110,
+            "permanentFailures": 2110,
+            "cooldownSuppressions": 2110,
+            "retryAttempts": 2110,
+            "auditEntries": 48530
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 162.5,
+            "workingSetMb": 84.84
+          },
+          "metrics": {
+            "events": 42200,
+            "incidents": 8440,
+            "actions": 6330,
+            "queuedActions": 0,
+            "succeededActions": 4220,
+            "retryActions": 0,
+            "failedActions": 2110,
+            "retryAttempts": 2110,
+            "permanentFailures": 2110,
+            "cooldownSuppressions": 2110,
+            "auditEntries": 99170
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 896.06,
+        "python": {
+          "process": {
+            "cpuSeconds": 511.296875,
+            "workingSetMb": 90.61
+          },
+          "metrics": {
+            "events": 43200,
+            "incidents": 8640,
+            "actions": 6480,
+            "queuedActions": 0,
+            "succeededActions": 4320,
+            "failedActions": 2160,
+            "permanentFailures": 2160,
+            "cooldownSuppressions": 2160,
+            "retryAttempts": 2160,
+            "auditEntries": 49680
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 166.921875,
+            "workingSetMb": 85.35
+          },
+          "metrics": {
+            "events": 43200,
+            "incidents": 8640,
+            "actions": 6480,
+            "queuedActions": 0,
+            "succeededActions": 4320,
+            "retryActions": 0,
+            "failedActions": 2160,
+            "retryAttempts": 2160,
+            "permanentFailures": 2160,
+            "cooldownSuppressions": 2160,
+            "auditEntries": 101520
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 918.9,
+        "python": {
+          "process": {
+            "cpuSeconds": 524.40625,
+            "workingSetMb": 95.68
+          },
+          "metrics": {
+            "events": 44200,
+            "incidents": 8840,
+            "actions": 6630,
+            "queuedActions": 0,
+            "succeededActions": 4420,
+            "failedActions": 2210,
+            "permanentFailures": 2210,
+            "cooldownSuppressions": 2210,
+            "retryAttempts": 2210,
+            "auditEntries": 50830
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 171.125,
+            "workingSetMb": 85.67
+          },
+          "metrics": {
+            "events": 44200,
+            "incidents": 8840,
+            "actions": 6630,
+            "queuedActions": 0,
+            "succeededActions": 4420,
+            "retryActions": 0,
+            "failedActions": 2210,
+            "retryAttempts": 2210,
+            "permanentFailures": 2210,
+            "cooldownSuppressions": 2210,
+            "auditEntries": 103870
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 945.34,
+        "python": {
+          "process": {
+            "cpuSeconds": 538.796875,
+            "workingSetMb": 93.37
+          },
+          "metrics": {
+            "events": 45200,
+            "incidents": 9040,
+            "actions": 6780,
+            "queuedActions": 0,
+            "succeededActions": 4520,
+            "failedActions": 2260,
+            "permanentFailures": 2260,
+            "cooldownSuppressions": 2260,
+            "retryAttempts": 2260,
+            "auditEntries": 51980
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 175.984375,
+            "workingSetMb": 86.14
+          },
+          "metrics": {
+            "events": 45200,
+            "incidents": 9040,
+            "actions": 6780,
+            "queuedActions": 0,
+            "succeededActions": 4520,
+            "retryActions": 0,
+            "failedActions": 2260,
+            "retryAttempts": 2260,
+            "permanentFailures": 2260,
+            "cooldownSuppressions": 2260,
+            "auditEntries": 106220
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 967.16,
+        "python": {
+          "process": {
+            "cpuSeconds": 552.171875,
+            "workingSetMb": 88.86
+          },
+          "metrics": {
+            "events": 46200,
+            "incidents": 9240,
+            "actions": 6930,
+            "queuedActions": 0,
+            "succeededActions": 4620,
+            "failedActions": 2310,
+            "permanentFailures": 2310,
+            "cooldownSuppressions": 2310,
+            "retryAttempts": 2310,
+            "auditEntries": 53130
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 180.09375,
+            "workingSetMb": 85.24
+          },
+          "metrics": {
+            "events": 46200,
+            "incidents": 9240,
+            "actions": 6930,
+            "queuedActions": 0,
+            "succeededActions": 4620,
+            "retryActions": 0,
+            "failedActions": 2310,
+            "retryAttempts": 2310,
+            "permanentFailures": 2310,
+            "cooldownSuppressions": 2310,
+            "auditEntries": 108570
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 987.07,
+        "python": {
+          "process": {
+            "cpuSeconds": 564.203125,
+            "workingSetMb": 95.91
+          },
+          "metrics": {
+            "events": 47200,
+            "incidents": 9440,
+            "actions": 7080,
+            "queuedActions": 0,
+            "succeededActions": 4720,
+            "failedActions": 2360,
+            "permanentFailures": 2360,
+            "cooldownSuppressions": 2360,
+            "retryAttempts": 2360,
+            "auditEntries": 54280
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 183.796875,
+            "workingSetMb": 86.66
+          },
+          "metrics": {
+            "events": 47200,
+            "incidents": 9440,
+            "actions": 7080,
+            "queuedActions": 0,
+            "succeededActions": 4720,
+            "retryActions": 0,
+            "failedActions": 2360,
+            "retryAttempts": 2360,
+            "permanentFailures": 2360,
+            "cooldownSuppressions": 2360,
+            "auditEntries": 110920
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1012.8,
+        "python": {
+          "process": {
+            "cpuSeconds": 579.828125,
+            "workingSetMb": 92.92
+          },
+          "metrics": {
+            "events": 48200,
+            "incidents": 9640,
+            "actions": 7230,
+            "queuedActions": 0,
+            "succeededActions": 4820,
+            "failedActions": 2410,
+            "permanentFailures": 2410,
+            "cooldownSuppressions": 2410,
+            "retryAttempts": 2410,
+            "auditEntries": 55430
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 188.875,
+            "workingSetMb": 86.65
+          },
+          "metrics": {
+            "events": 48200,
+            "incidents": 9640,
+            "actions": 7230,
+            "queuedActions": 0,
+            "succeededActions": 4820,
+            "retryActions": 0,
+            "failedActions": 2410,
+            "retryAttempts": 2410,
+            "permanentFailures": 2410,
+            "cooldownSuppressions": 2410,
+            "auditEntries": 113270
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1038.26,
+        "python": {
+          "process": {
+            "cpuSeconds": 595.328125,
+            "workingSetMb": 89.95
+          },
+          "metrics": {
+            "events": 49200,
+            "incidents": 9840,
+            "actions": 7380,
+            "queuedActions": 0,
+            "succeededActions": 4920,
+            "failedActions": 2460,
+            "permanentFailures": 2460,
+            "cooldownSuppressions": 2460,
+            "retryAttempts": 2460,
+            "auditEntries": 56580
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 194.28125,
+            "workingSetMb": 86.77
+          },
+          "metrics": {
+            "events": 49200,
+            "incidents": 9840,
+            "actions": 7380,
+            "queuedActions": 0,
+            "succeededActions": 4920,
+            "retryActions": 0,
+            "failedActions": 2460,
+            "retryAttempts": 2460,
+            "permanentFailures": 2460,
+            "cooldownSuppressions": 2460,
+            "auditEntries": 115620
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1063.44,
+        "python": {
+          "process": {
+            "cpuSeconds": 611.84375,
+            "workingSetMb": 95.19
+          },
+          "metrics": {
+            "events": 50200,
+            "incidents": 10040,
+            "actions": 7530,
+            "queuedActions": 0,
+            "succeededActions": 5020,
+            "failedActions": 2510,
+            "permanentFailures": 2510,
+            "cooldownSuppressions": 2510,
+            "retryAttempts": 2510,
+            "auditEntries": 57730
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 199.4375,
+            "workingSetMb": 86.32
+          },
+          "metrics": {
+            "events": 50200,
+            "incidents": 10040,
+            "actions": 7530,
+            "queuedActions": 0,
+            "succeededActions": 5020,
+            "retryActions": 0,
+            "failedActions": 2510,
+            "retryAttempts": 2510,
+            "permanentFailures": 2510,
+            "cooldownSuppressions": 2510,
+            "auditEntries": 117970
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1089.64,
+        "python": {
+          "process": {
+            "cpuSeconds": 627.03125,
+            "workingSetMb": 93.34
+          },
+          "metrics": {
+            "events": 51200,
+            "incidents": 10240,
+            "actions": 7680,
+            "queuedActions": 0,
+            "succeededActions": 5120,
+            "failedActions": 2560,
+            "permanentFailures": 2560,
+            "cooldownSuppressions": 2560,
+            "retryAttempts": 2560,
+            "auditEntries": 58880
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 204.890625,
+            "workingSetMb": 85.64
+          },
+          "metrics": {
+            "events": 51200,
+            "incidents": 10240,
+            "actions": 7680,
+            "queuedActions": 0,
+            "succeededActions": 5120,
+            "retryActions": 0,
+            "failedActions": 2560,
+            "retryAttempts": 2560,
+            "permanentFailures": 2560,
+            "cooldownSuppressions": 2560,
+            "auditEntries": 120320
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1112.8,
+        "python": {
+          "process": {
+            "cpuSeconds": 641.375,
+            "workingSetMb": 97.04
+          },
+          "metrics": {
+            "events": 52200,
+            "incidents": 10440,
+            "actions": 7830,
+            "queuedActions": 0,
+            "succeededActions": 5220,
+            "failedActions": 2610,
+            "permanentFailures": 2610,
+            "cooldownSuppressions": 2610,
+            "retryAttempts": 2610,
+            "auditEntries": 60030
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 209.265625,
+            "workingSetMb": 86.78
+          },
+          "metrics": {
+            "events": 52200,
+            "incidents": 10440,
+            "actions": 7830,
+            "queuedActions": 0,
+            "succeededActions": 5220,
+            "retryActions": 0,
+            "failedActions": 2610,
+            "retryAttempts": 2610,
+            "permanentFailures": 2610,
+            "cooldownSuppressions": 2610,
+            "auditEntries": 122670
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1135.19,
+        "python": {
+          "process": {
+            "cpuSeconds": 656.03125,
+            "workingSetMb": 93.98
+          },
+          "metrics": {
+            "events": 53200,
+            "incidents": 10640,
+            "actions": 7980,
+            "queuedActions": 0,
+            "succeededActions": 5320,
+            "failedActions": 2660,
+            "permanentFailures": 2660,
+            "cooldownSuppressions": 2660,
+            "retryAttempts": 2660,
+            "auditEntries": 61180
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 213.03125,
+            "workingSetMb": 86.62
+          },
+          "metrics": {
+            "events": 53200,
+            "incidents": 10640,
+            "actions": 7980,
+            "queuedActions": 0,
+            "succeededActions": 5320,
+            "retryActions": 0,
+            "failedActions": 2660,
+            "retryAttempts": 2660,
+            "permanentFailures": 2660,
+            "cooldownSuppressions": 2660,
+            "auditEntries": 125020
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1156.39,
+        "python": {
+          "process": {
+            "cpuSeconds": 668.078125,
+            "workingSetMb": 92.5
+          },
+          "metrics": {
+            "events": 54200,
+            "incidents": 10840,
+            "actions": 8130,
+            "queuedActions": 0,
+            "succeededActions": 5420,
+            "failedActions": 2710,
+            "permanentFailures": 2710,
+            "cooldownSuppressions": 2710,
+            "retryAttempts": 2710,
+            "auditEntries": 62330
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 218.03125,
+            "workingSetMb": 87.22
+          },
+          "metrics": {
+            "events": 54200,
+            "incidents": 10840,
+            "actions": 8130,
+            "queuedActions": 0,
+            "succeededActions": 5420,
+            "retryActions": 0,
+            "failedActions": 2710,
+            "retryAttempts": 2710,
+            "permanentFailures": 2710,
+            "cooldownSuppressions": 2710,
+            "auditEntries": 127370
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1177.53,
+        "python": {
+          "process": {
+            "cpuSeconds": 679.96875,
+            "workingSetMb": 96.04
+          },
+          "metrics": {
+            "events": 55200,
+            "incidents": 11040,
+            "actions": 8280,
+            "queuedActions": 0,
+            "succeededActions": 5520,
+            "failedActions": 2760,
+            "permanentFailures": 2760,
+            "cooldownSuppressions": 2760,
+            "retryAttempts": 2760,
+            "auditEntries": 63480
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 225.03125,
+            "workingSetMb": 88.72
+          },
+          "metrics": {
+            "events": 55200,
+            "incidents": 11040,
+            "actions": 8280,
+            "queuedActions": 0,
+            "succeededActions": 5520,
+            "retryActions": 0,
+            "failedActions": 2760,
+            "retryAttempts": 2760,
+            "permanentFailures": 2760,
+            "cooldownSuppressions": 2760,
+            "auditEntries": 129720
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1198.82,
+        "python": {
+          "process": {
+            "cpuSeconds": 693.5625,
+            "workingSetMb": 93.79
+          },
+          "metrics": {
+            "events": 56200,
+            "incidents": 11240,
+            "actions": 8430,
+            "queuedActions": 0,
+            "succeededActions": 5620,
+            "failedActions": 2810,
+            "permanentFailures": 2810,
+            "cooldownSuppressions": 2810,
+            "retryAttempts": 2810,
+            "auditEntries": 64630
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 228.703125,
+            "workingSetMb": 88.7
+          },
+          "metrics": {
+            "events": 56200,
+            "incidents": 11240,
+            "actions": 8430,
+            "queuedActions": 0,
+            "succeededActions": 5620,
+            "retryActions": 0,
+            "failedActions": 2810,
+            "retryAttempts": 2810,
+            "permanentFailures": 2810,
+            "cooldownSuppressions": 2810,
+            "auditEntries": 132070
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1221.23,
+        "python": {
+          "process": {
+            "cpuSeconds": 706.4375,
+            "workingSetMb": 93.14
+          },
+          "metrics": {
+            "events": 57200,
+            "incidents": 11440,
+            "actions": 8580,
+            "queuedActions": 0,
+            "succeededActions": 5720,
+            "failedActions": 2860,
+            "permanentFailures": 2860,
+            "cooldownSuppressions": 2860,
+            "retryAttempts": 2860,
+            "auditEntries": 65780
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 234.453125,
+            "workingSetMb": 88.96
+          },
+          "metrics": {
+            "events": 57200,
+            "incidents": 11440,
+            "actions": 8580,
+            "queuedActions": 0,
+            "succeededActions": 5720,
+            "retryActions": 0,
+            "failedActions": 2860,
+            "retryAttempts": 2860,
+            "permanentFailures": 2860,
+            "cooldownSuppressions": 2860,
+            "auditEntries": 134420
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1241.93,
+        "python": {
+          "process": {
+            "cpuSeconds": 719.125,
+            "workingSetMb": 93.1
+          },
+          "metrics": {
+            "events": 58200,
+            "incidents": 11640,
+            "actions": 8730,
+            "queuedActions": 0,
+            "succeededActions": 5820,
+            "failedActions": 2910,
+            "permanentFailures": 2910,
+            "cooldownSuppressions": 2910,
+            "retryAttempts": 2910,
+            "auditEntries": 66930
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 238.28125,
+            "workingSetMb": 89.36
+          },
+          "metrics": {
+            "events": 58200,
+            "incidents": 11640,
+            "actions": 8730,
+            "queuedActions": 0,
+            "succeededActions": 5820,
+            "retryActions": 0,
+            "failedActions": 2910,
+            "retryAttempts": 2910,
+            "permanentFailures": 2910,
+            "cooldownSuppressions": 2910,
+            "auditEntries": 136770
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1266.26,
+        "python": {
+          "process": {
+            "cpuSeconds": 733.953125,
+            "workingSetMb": 94.69
+          },
+          "metrics": {
+            "events": 59200,
+            "incidents": 11840,
+            "actions": 8880,
+            "queuedActions": 0,
+            "succeededActions": 5920,
+            "failedActions": 2960,
+            "permanentFailures": 2960,
+            "cooldownSuppressions": 2960,
+            "retryAttempts": 2960,
+            "auditEntries": 68080
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 243.9375,
+            "workingSetMb": 86.56
+          },
+          "metrics": {
+            "events": 59200,
+            "incidents": 11840,
+            "actions": 8880,
+            "queuedActions": 0,
+            "succeededActions": 5920,
+            "retryActions": 0,
+            "failedActions": 2960,
+            "retryAttempts": 2960,
+            "permanentFailures": 2960,
+            "cooldownSuppressions": 2960,
+            "auditEntries": 139120
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1289.65,
+        "python": {
+          "process": {
+            "cpuSeconds": 748.5625,
+            "workingSetMb": 87.59
+          },
+          "metrics": {
+            "events": 60200,
+            "incidents": 12040,
+            "actions": 9030,
+            "queuedActions": 0,
+            "succeededActions": 6020,
+            "failedActions": 3010,
+            "permanentFailures": 3010,
+            "cooldownSuppressions": 3010,
+            "retryAttempts": 3010,
+            "auditEntries": 69260
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 248.25,
+            "workingSetMb": 86.37
+          },
+          "metrics": {
+            "events": 60200,
+            "incidents": 12040,
+            "actions": 9030,
+            "queuedActions": 0,
+            "succeededActions": 6020,
+            "retryActions": 0,
+            "failedActions": 3010,
+            "retryAttempts": 3010,
+            "permanentFailures": 3010,
+            "cooldownSuppressions": 3010,
+            "auditEntries": 141470
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1310.75,
+        "python": {
+          "process": {
+            "cpuSeconds": 761.65625,
+            "workingSetMb": 95.24
+          },
+          "metrics": {
+            "events": 61200,
+            "incidents": 12240,
+            "actions": 9180,
+            "queuedActions": 0,
+            "succeededActions": 6120,
+            "failedActions": 3060,
+            "permanentFailures": 3060,
+            "cooldownSuppressions": 3060,
+            "retryAttempts": 3060,
+            "auditEntries": 70410
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 252.0625,
+            "workingSetMb": 86.68
+          },
+          "metrics": {
+            "events": 61200,
+            "incidents": 12240,
+            "actions": 9180,
+            "queuedActions": 0,
+            "succeededActions": 6120,
+            "retryActions": 0,
+            "failedActions": 3060,
+            "retryAttempts": 3060,
+            "permanentFailures": 3060,
+            "cooldownSuppressions": 3060,
+            "auditEntries": 143820
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1332.89,
+        "python": {
+          "process": {
+            "cpuSeconds": 774.78125,
+            "workingSetMb": 94.75
+          },
+          "metrics": {
+            "events": 62200,
+            "incidents": 12440,
+            "actions": 9330,
+            "queuedActions": 0,
+            "succeededActions": 6220,
+            "failedActions": 3110,
+            "permanentFailures": 3110,
+            "cooldownSuppressions": 3110,
+            "retryAttempts": 3110,
+            "auditEntries": 71560
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 256.84375,
+            "workingSetMb": 89.06
+          },
+          "metrics": {
+            "events": 62200,
+            "incidents": 12440,
+            "actions": 9330,
+            "queuedActions": 0,
+            "succeededActions": 6220,
+            "retryActions": 0,
+            "failedActions": 3110,
+            "retryAttempts": 3110,
+            "permanentFailures": 3110,
+            "cooldownSuppressions": 3110,
+            "auditEntries": 146170
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1353.5,
+        "python": {
+          "process": {
+            "cpuSeconds": 787.203125,
+            "workingSetMb": 96.51
+          },
+          "metrics": {
+            "events": 63200,
+            "incidents": 12640,
+            "actions": 9480,
+            "queuedActions": 0,
+            "succeededActions": 6320,
+            "failedActions": 3160,
+            "permanentFailures": 3160,
+            "cooldownSuppressions": 3160,
+            "retryAttempts": 3160,
+            "auditEntries": 72710
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 261.875,
+            "workingSetMb": 90.58
+          },
+          "metrics": {
+            "events": 63200,
+            "incidents": 12640,
+            "actions": 9480,
+            "queuedActions": 0,
+            "succeededActions": 6320,
+            "retryActions": 0,
+            "failedActions": 3160,
+            "retryAttempts": 3160,
+            "permanentFailures": 3160,
+            "cooldownSuppressions": 3160,
+            "auditEntries": 148520
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1379.15,
+        "python": {
+          "process": {
+            "cpuSeconds": 802.96875,
+            "workingSetMb": 95.2
+          },
+          "metrics": {
+            "events": 64200,
+            "incidents": 12840,
+            "actions": 9630,
+            "queuedActions": 0,
+            "succeededActions": 6420,
+            "failedActions": 3210,
+            "permanentFailures": 3210,
+            "cooldownSuppressions": 3210,
+            "retryAttempts": 3210,
+            "auditEntries": 73860
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 266.40625,
+            "workingSetMb": 90.91
+          },
+          "metrics": {
+            "events": 64200,
+            "incidents": 12840,
+            "actions": 9630,
+            "queuedActions": 0,
+            "succeededActions": 6420,
+            "retryActions": 0,
+            "failedActions": 3210,
+            "retryAttempts": 3210,
+            "permanentFailures": 3210,
+            "cooldownSuppressions": 3210,
+            "auditEntries": 150870
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1401.53,
+        "python": {
+          "process": {
+            "cpuSeconds": 816.515625,
+            "workingSetMb": 92.2
+          },
+          "metrics": {
+            "events": 65200,
+            "incidents": 13040,
+            "actions": 9780,
+            "queuedActions": 0,
+            "succeededActions": 6520,
+            "failedActions": 3260,
+            "permanentFailures": 3260,
+            "cooldownSuppressions": 3260,
+            "retryAttempts": 3260,
+            "auditEntries": 75010
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 271.125,
+            "workingSetMb": 91.55
+          },
+          "metrics": {
+            "events": 65200,
+            "incidents": 13040,
+            "actions": 9780,
+            "queuedActions": 0,
+            "succeededActions": 6520,
+            "retryActions": 0,
+            "failedActions": 3260,
+            "retryAttempts": 3260,
+            "permanentFailures": 3260,
+            "cooldownSuppressions": 3260,
+            "auditEntries": 153220
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1424.81,
+        "python": {
+          "process": {
+            "cpuSeconds": 830.5625,
+            "workingSetMb": 98.41
+          },
+          "metrics": {
+            "events": 66200,
+            "incidents": 13240,
+            "actions": 9930,
+            "queuedActions": 0,
+            "succeededActions": 6620,
+            "failedActions": 3310,
+            "permanentFailures": 3310,
+            "cooldownSuppressions": 3310,
+            "retryAttempts": 3310,
+            "auditEntries": 76160
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 275.0625,
+            "workingSetMb": 90.95
+          },
+          "metrics": {
+            "events": 66200,
+            "incidents": 13240,
+            "actions": 9930,
+            "queuedActions": 0,
+            "succeededActions": 6620,
+            "retryActions": 0,
+            "failedActions": 3310,
+            "retryAttempts": 3310,
+            "permanentFailures": 3310,
+            "cooldownSuppressions": 3310,
+            "auditEntries": 155570
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1447.82,
+        "python": {
+          "process": {
+            "cpuSeconds": 844.4375,
+            "workingSetMb": 95.75
+          },
+          "metrics": {
+            "events": 67200,
+            "incidents": 13440,
+            "actions": 10080,
+            "queuedActions": 0,
+            "succeededActions": 6720,
+            "failedActions": 3360,
+            "permanentFailures": 3360,
+            "cooldownSuppressions": 3360,
+            "retryAttempts": 3360,
+            "auditEntries": 77310
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 280.640625,
+            "workingSetMb": 90.71
+          },
+          "metrics": {
+            "events": 67200,
+            "incidents": 13440,
+            "actions": 10080,
+            "queuedActions": 0,
+            "succeededActions": 6720,
+            "retryActions": 0,
+            "failedActions": 3360,
+            "retryAttempts": 3360,
+            "permanentFailures": 3360,
+            "cooldownSuppressions": 3360,
+            "auditEntries": 157920
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1469.8,
+        "python": {
+          "process": {
+            "cpuSeconds": 858.28125,
+            "workingSetMb": 90.71
+          },
+          "metrics": {
+            "events": 68200,
+            "incidents": 13640,
+            "actions": 10230,
+            "queuedActions": 0,
+            "succeededActions": 6820,
+            "failedActions": 3410,
+            "permanentFailures": 3410,
+            "cooldownSuppressions": 3410,
+            "retryAttempts": 3410,
+            "auditEntries": 78460
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 285.53125,
+            "workingSetMb": 90.67
+          },
+          "metrics": {
+            "events": 68200,
+            "incidents": 13640,
+            "actions": 10230,
+            "queuedActions": 0,
+            "succeededActions": 6820,
+            "retryActions": 0,
+            "failedActions": 3410,
+            "retryAttempts": 3410,
+            "permanentFailures": 3410,
+            "cooldownSuppressions": 3410,
+            "auditEntries": 160270
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1491.66,
+        "python": {
+          "process": {
+            "cpuSeconds": 871.765625,
+            "workingSetMb": 95.64
+          },
+          "metrics": {
+            "events": 69200,
+            "incidents": 13840,
+            "actions": 10380,
+            "queuedActions": 0,
+            "succeededActions": 6920,
+            "failedActions": 3460,
+            "permanentFailures": 3460,
+            "cooldownSuppressions": 3460,
+            "retryAttempts": 3460,
+            "auditEntries": 79610
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 289.671875,
+            "workingSetMb": 90.93
+          },
+          "metrics": {
+            "events": 69200,
+            "incidents": 13840,
+            "actions": 10380,
+            "queuedActions": 0,
+            "succeededActions": 6920,
+            "retryActions": 0,
+            "failedActions": 3460,
+            "retryAttempts": 3460,
+            "permanentFailures": 3460,
+            "cooldownSuppressions": 3460,
+            "auditEntries": 162620
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1520.59,
+        "python": {
+          "process": {
+            "cpuSeconds": 891.859375,
+            "workingSetMb": 89.35
+          },
+          "metrics": {
+            "events": 70200,
+            "incidents": 14040,
+            "actions": 10530,
+            "queuedActions": 0,
+            "succeededActions": 7020,
+            "failedActions": 3510,
+            "permanentFailures": 3510,
+            "cooldownSuppressions": 3510,
+            "retryAttempts": 3510,
+            "auditEntries": 80760
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 294.96875,
+            "workingSetMb": 90.73
+          },
+          "metrics": {
+            "events": 70200,
+            "incidents": 14040,
+            "actions": 10530,
+            "queuedActions": 0,
+            "succeededActions": 7020,
+            "retryActions": 0,
+            "failedActions": 3510,
+            "retryAttempts": 3510,
+            "permanentFailures": 3510,
+            "cooldownSuppressions": 3510,
+            "auditEntries": 164970
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1547.95,
+        "python": {
+          "process": {
+            "cpuSeconds": 909.921875,
+            "workingSetMb": 89.36
+          },
+          "metrics": {
+            "events": 71200,
+            "incidents": 14240,
+            "actions": 10680,
+            "queuedActions": 0,
+            "succeededActions": 7120,
+            "failedActions": 3560,
+            "permanentFailures": 3560,
+            "cooldownSuppressions": 3560,
+            "retryAttempts": 3560,
+            "auditEntries": 81910
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 300.21875,
+            "workingSetMb": 86.94
+          },
+          "metrics": {
+            "events": 71200,
+            "incidents": 14240,
+            "actions": 10680,
+            "queuedActions": 0,
+            "succeededActions": 7120,
+            "retryActions": 0,
+            "failedActions": 3560,
+            "retryAttempts": 3560,
+            "permanentFailures": 3560,
+            "cooldownSuppressions": 3560,
+            "auditEntries": 167320
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1573.47,
+        "python": {
+          "process": {
+            "cpuSeconds": 926.296875,
+            "workingSetMb": 95.67
+          },
+          "metrics": {
+            "events": 72200,
+            "incidents": 14440,
+            "actions": 10830,
+            "queuedActions": 0,
+            "succeededActions": 7220,
+            "failedActions": 3610,
+            "permanentFailures": 3610,
+            "cooldownSuppressions": 3610,
+            "retryAttempts": 3610,
+            "auditEntries": 83060
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 305.375,
+            "workingSetMb": 88.07
+          },
+          "metrics": {
+            "events": 72200,
+            "incidents": 14440,
+            "actions": 10830,
+            "queuedActions": 0,
+            "succeededActions": 7220,
+            "retryActions": 0,
+            "failedActions": 3610,
+            "retryAttempts": 3610,
+            "permanentFailures": 3610,
+            "cooldownSuppressions": 3610,
+            "auditEntries": 169670
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1606.44,
+        "python": {
+          "process": {
+            "cpuSeconds": 946.578125,
+            "workingSetMb": 93.88
+          },
+          "metrics": {
+            "events": 73200,
+            "incidents": 14640,
+            "actions": 10980,
+            "queuedActions": 0,
+            "succeededActions": 7320,
+            "failedActions": 3660,
+            "permanentFailures": 3660,
+            "cooldownSuppressions": 3660,
+            "retryAttempts": 3660,
+            "auditEntries": 84210
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 310.9375,
+            "workingSetMb": 88.82
+          },
+          "metrics": {
+            "events": 73200,
+            "incidents": 14640,
+            "actions": 10980,
+            "queuedActions": 0,
+            "succeededActions": 7320,
+            "retryActions": 0,
+            "failedActions": 3660,
+            "retryAttempts": 3660,
+            "permanentFailures": 3660,
+            "cooldownSuppressions": 3660,
+            "auditEntries": 172020
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1639.04,
+        "python": {
+          "process": {
+            "cpuSeconds": 966.4375,
+            "workingSetMb": 97.1
+          },
+          "metrics": {
+            "events": 74200,
+            "incidents": 14840,
+            "actions": 11130,
+            "queuedActions": 0,
+            "succeededActions": 7420,
+            "failedActions": 3710,
+            "permanentFailures": 3710,
+            "cooldownSuppressions": 3710,
+            "retryAttempts": 3710,
+            "auditEntries": 85360
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 317.703125,
+            "workingSetMb": 89.48
+          },
+          "metrics": {
+            "events": 74200,
+            "incidents": 14840,
+            "actions": 11130,
+            "queuedActions": 0,
+            "succeededActions": 7420,
+            "retryActions": 0,
+            "failedActions": 3710,
+            "retryAttempts": 3710,
+            "permanentFailures": 3710,
+            "cooldownSuppressions": 3710,
+            "auditEntries": 174370
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1667.78,
+        "python": {
+          "process": {
+            "cpuSeconds": 984.71875,
+            "workingSetMb": 92.64
+          },
+          "metrics": {
+            "events": 75200,
+            "incidents": 15040,
+            "actions": 11280,
+            "queuedActions": 0,
+            "succeededActions": 7520,
+            "failedActions": 3760,
+            "permanentFailures": 3760,
+            "cooldownSuppressions": 3760,
+            "retryAttempts": 3760,
+            "auditEntries": 86510
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 323.265625,
+            "workingSetMb": 88.88
+          },
+          "metrics": {
+            "events": 75200,
+            "incidents": 15040,
+            "actions": 11280,
+            "queuedActions": 0,
+            "succeededActions": 7520,
+            "retryActions": 0,
+            "failedActions": 3760,
+            "retryAttempts": 3760,
+            "permanentFailures": 3760,
+            "cooldownSuppressions": 3760,
+            "auditEntries": 176720
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1699.69,
+        "python": {
+          "process": {
+            "cpuSeconds": 1003.609375,
+            "workingSetMb": 89.34
+          },
+          "metrics": {
+            "events": 76200,
+            "incidents": 15240,
+            "actions": 11430,
+            "queuedActions": 0,
+            "succeededActions": 7620,
+            "failedActions": 3810,
+            "permanentFailures": 3810,
+            "cooldownSuppressions": 3810,
+            "retryAttempts": 3810,
+            "auditEntries": 87660
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 328.796875,
+            "workingSetMb": 89.68
+          },
+          "metrics": {
+            "events": 76200,
+            "incidents": 15240,
+            "actions": 11430,
+            "queuedActions": 0,
+            "succeededActions": 7620,
+            "retryActions": 0,
+            "failedActions": 3810,
+            "retryAttempts": 3810,
+            "permanentFailures": 3810,
+            "cooldownSuppressions": 3810,
+            "auditEntries": 179070
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1722.89,
+        "python": {
+          "process": {
+            "cpuSeconds": 1017.265625,
+            "workingSetMb": 96.49
+          },
+          "metrics": {
+            "events": 77200,
+            "incidents": 15440,
+            "actions": 11580,
+            "queuedActions": 0,
+            "succeededActions": 7720,
+            "failedActions": 3860,
+            "permanentFailures": 3860,
+            "cooldownSuppressions": 3860,
+            "retryAttempts": 3860,
+            "auditEntries": 88810
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 332.9375,
+            "workingSetMb": 87.72
+          },
+          "metrics": {
+            "events": 77200,
+            "incidents": 15440,
+            "actions": 11580,
+            "queuedActions": 0,
+            "succeededActions": 7720,
+            "retryActions": 0,
+            "failedActions": 3860,
+            "retryAttempts": 3860,
+            "permanentFailures": 3860,
+            "cooldownSuppressions": 3860,
+            "auditEntries": 181420
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1745.38,
+        "python": {
+          "process": {
+            "cpuSeconds": 1031.5625,
+            "workingSetMb": 95.55
+          },
+          "metrics": {
+            "events": 78200,
+            "incidents": 15640,
+            "actions": 11730,
+            "queuedActions": 0,
+            "succeededActions": 7820,
+            "failedActions": 3910,
+            "permanentFailures": 3910,
+            "cooldownSuppressions": 3910,
+            "retryAttempts": 3910,
+            "auditEntries": 89960
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 337.015625,
+            "workingSetMb": 87.47
+          },
+          "metrics": {
+            "events": 78200,
+            "incidents": 15640,
+            "actions": 11730,
+            "queuedActions": 0,
+            "succeededActions": 7820,
+            "retryActions": 0,
+            "failedActions": 3910,
+            "retryAttempts": 3910,
+            "permanentFailures": 3910,
+            "cooldownSuppressions": 3910,
+            "auditEntries": 183770
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1771.47,
+        "python": {
+          "process": {
+            "cpuSeconds": 1047.484375,
+            "workingSetMb": 96.82
+          },
+          "metrics": {
+            "events": 79200,
+            "incidents": 15840,
+            "actions": 11880,
+            "queuedActions": 0,
+            "succeededActions": 7920,
+            "failedActions": 3960,
+            "permanentFailures": 3960,
+            "cooldownSuppressions": 3960,
+            "retryAttempts": 3960,
+            "auditEntries": 91110
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 342.171875,
+            "workingSetMb": 88.44
+          },
+          "metrics": {
+            "events": 79200,
+            "incidents": 15840,
+            "actions": 11880,
+            "queuedActions": 0,
+            "succeededActions": 7920,
+            "retryActions": 0,
+            "failedActions": 3960,
+            "retryAttempts": 3960,
+            "permanentFailures": 3960,
+            "cooldownSuppressions": 3960,
+            "auditEntries": 186120
+          },
+          "requestErrors": 0
+        }
+      },
+      {
+        "elapsedSeconds": 1802.23,
+        "python": {
+          "process": {
+            "cpuSeconds": 1067.078125,
+            "workingSetMb": 95.92
+          },
+          "metrics": {
+            "events": 80200,
+            "incidents": 16040,
+            "actions": 12030,
+            "queuedActions": 0,
+            "succeededActions": 8020,
+            "failedActions": 4010,
+            "permanentFailures": 4010,
+            "cooldownSuppressions": 4010,
+            "retryAttempts": 4010,
+            "auditEntries": 92260
+          },
+          "requestErrors": 0
+        },
+        "dotnet": {
+          "process": {
+            "cpuSeconds": 347.359375,
+            "workingSetMb": 88.43
+          },
+          "metrics": {
+            "events": 80200,
+            "incidents": 16040,
+            "actions": 12030,
+            "queuedActions": 0,
+            "succeededActions": 8020,
+            "retryActions": 0,
+            "failedActions": 4010,
+            "retryAttempts": 4010,
+            "permanentFailures": 4010,
+            "cooldownSuppressions": 4010,
+            "auditEntries": 188470
+          },
+          "requestErrors": 0
+        }
+      }
+    ],
+    "firstDivergence": null,
+    "finalCountersMatch": true,
+    "final": {
+      "elapsedSeconds": 1803.8,
+      "python": {
+        "process": {
+          "cpuSeconds": 1067.140625,
+          "workingSetMb": 98.2
+        },
+        "metrics": {
+          "events": 80200,
+          "incidents": 16040,
+          "actions": 12030,
+          "queuedActions": 0,
+          "succeededActions": 8020,
+          "failedActions": 4010,
+          "permanentFailures": 4010,
+          "cooldownSuppressions": 4010,
+          "retryAttempts": 4010,
+          "auditEntries": 92260
+        },
+        "counters": {
+          "events": 80200,
+          "incidents": 16040,
+          "actions": 12030,
+          "cooldown_suppressions": 4010,
+          "succeeded_actions": 8020,
+          "failed_actions": 4010,
+          "retry_attempts": 4010,
+          "permanent_failures": 4010,
+          "errors": 0
+        },
+        "requestErrors": 0
+      },
+      "dotnet": {
+        "process": {
+          "cpuSeconds": 347.421875,
+          "workingSetMb": 88.4
+        },
+        "metrics": {
+          "events": 80200,
+          "incidents": 16040,
+          "actions": 12030,
+          "queuedActions": 0,
+          "succeededActions": 8020,
+          "retryActions": 0,
+          "failedActions": 4010,
+          "retryAttempts": 4010,
+          "permanentFailures": 4010,
+          "cooldownSuppressions": 4010,
+          "auditEntries": 188470
+        },
+        "counters": {
+          "events": 80200,
+          "incidents": 16040,
+          "actions": 12030,
+          "cooldown_suppressions": 4010,
+          "succeeded_actions": 8020,
+          "failed_actions": 4010,
+          "retry_attempts": 4010,
+          "permanent_failures": 4010,
+          "errors": 0
+        },
+        "requestErrors": 0
+      }
+    }
+  },
+  "notes": [
+    "Engine benchmark was skipped in this run."
+  ]
+}

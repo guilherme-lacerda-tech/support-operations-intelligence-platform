@@ -1,7 +1,7 @@
 from datetime import UTC, datetime
 from enum import StrEnum
 
-from sqlalchemy import DateTime, ForeignKey, Index, Integer, String, Text, UniqueConstraint
+from sqlalchemy import DateTime, ForeignKey, Integer, String, Text, UniqueConstraint
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
 
@@ -17,9 +17,20 @@ class IncidentState(StrEnum):
 
 class ActionState(StrEnum):
     QUEUED = "queued"
+    RETRY = "retry"
     SUCCEEDED = "succeeded"
     FAILED = "failed"
     SKIPPED = "skipped"
+
+
+class CheckState(StrEnum):
+    PENDING = "pending"
+    STARTED = "started"
+    WAITING_CONFIRMATION = "waiting_confirmation"
+    CONFIRMED = "confirmed"
+    TIMEOUT = "timeout"
+    CANCELLED = "cancelled"
+    FAILED = "failed"
 
 
 class Asset(Base):
@@ -57,10 +68,7 @@ class OperationalEvent(Base):
     category: Mapped[str] = mapped_column(String(80), index=True)
     severity: Mapped[int] = mapped_column(Integer)
     message: Mapped[str] = mapped_column(Text)
-    occurred_at: Mapped[datetime] = mapped_column(
-        DateTime(timezone=True), default=lambda: datetime.now(UTC), index=True
-    )
-    executor_mode: Mapped[str] = mapped_column(String(40), default="success")
+    correlation_id: Mapped[str] = mapped_column(String(80), default="")
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(UTC))
 
     asset: Mapped[Asset] = relationship(back_populates="events")
@@ -71,9 +79,8 @@ class Incident(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True)
     asset_id: Mapped[int] = mapped_column(ForeignKey("assets.id"))
-    rule_id: Mapped[int | None] = mapped_column(ForeignKey("automation_rules.id"), nullable=True)
+    rule_id: Mapped[int] = mapped_column(ForeignKey("automation_rules.id"))
     event_id: Mapped[int] = mapped_column(ForeignKey("operational_events.id"))
-    category: Mapped[str] = mapped_column(String(80), index=True)
     state: Mapped[str] = mapped_column(String(40), default=IncidentState.OPEN.value)
     summary: Mapped[str] = mapped_column(String(200))
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(UTC))
@@ -94,6 +101,9 @@ class Action(Base):
     state: Mapped[str] = mapped_column(String(40), default=ActionState.QUEUED.value)
     attempts: Mapped[int] = mapped_column(Integer, default=0)
     detail: Mapped[str] = mapped_column(Text, default="")
+    next_attempt_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    lease_id: Mapped[str | None] = mapped_column(String(80), nullable=True)
+    leased_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(UTC))
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(UTC))
 
@@ -111,6 +121,24 @@ class AuditLog(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(UTC))
 
 
+class IdempotencyRecord(Base):
+    __tablename__ = "idempotency_records"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    key: Mapped[str] = mapped_column(String(120), unique=True, index=True)
+    event_id: Mapped[int | None] = mapped_column(ForeignKey("operational_events.id"), nullable=True)
+    incident_id: Mapped[int | None] = mapped_column(ForeignKey("incidents.id"), nullable=True)
+    action_id: Mapped[int | None] = mapped_column(ForeignKey("actions.id"), nullable=True)
+    skipped_reason: Mapped[str | None] = mapped_column(String(80), nullable=True)
+    hits: Mapped[int] = mapped_column(Integer, default=0)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(UTC))
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(UTC))
+
+    event: Mapped[OperationalEvent | None] = relationship()
+    incident: Mapped[Incident | None] = relationship()
+    action: Mapped[Action | None] = relationship()
+
+
 class JobRun(Base):
     __tablename__ = "job_runs"
 
@@ -122,6 +150,14 @@ class JobRun(Base):
     finished_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
 
 
-Index("ix_events_asset_category_occurred", OperationalEvent.asset_id, OperationalEvent.category, OperationalEvent.occurred_at)
-Index("ix_incidents_asset_category_created", Incident.asset_id, Incident.category, Incident.created_at)
+class CheckRun(Base):
+    __tablename__ = "check_runs"
 
+    id: Mapped[int] = mapped_column(primary_key=True)
+    name: Mapped[str] = mapped_column(String(120), index=True)
+    asset_external_id: Mapped[str] = mapped_column(String(80), index=True)
+    state: Mapped[str] = mapped_column(String(40), default=CheckState.PENDING.value)
+    detail: Mapped[str] = mapped_column(Text, default="")
+    confirmation_due_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(UTC))
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(UTC))

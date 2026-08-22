@@ -18,7 +18,7 @@ def run_demo() -> dict[str, int | str | None]:
             severity=88,
             message="Heartbeat missing for the synthetic pump controller",
         )
-        _event, incident, action, _reason = EventProcessor(session).process(payload)
+        _event, incident, action, _reason, _replay = EventProcessor(session).process(payload)
         if action:
             execute_action_with_retry(session, action)
         session.commit()

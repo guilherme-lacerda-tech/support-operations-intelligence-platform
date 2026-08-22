@@ -42,7 +42,7 @@ PROBLEMA: sem regras, estados e metricas, a operacao vira uma lista de sintomas 
 
 DECISAO: modelar eventos, incidentes, acoes, cooldown, auditoria e metricas em um projeto clean-room.
 
-IMPLEMENTACAO: criei uma plataforma sintetica com Python/FastAPI, SQLAlchemy, SQLite, regras e testes automatizados.
+IMPLEMENTACAO: criei uma plataforma sintetica com Python/FastAPI, SQLAlchemy, SQLite, regras, fila duravel, logs estruturados e testes automatizados.
 
 RESULTADO: o case publico demonstra padroes usados para raciocinar sobre bases com >66 mil incidentes e >2,7 milhoes de acoes analisadas em contexto profissional sanitizado.
 
@@ -58,9 +58,9 @@ PROBLEMA: comparar linguagens sem equivalencia funcional gera conclusoes fracas.
 
 DECISAO: definir contrato comportamental compartilhado antes de medir performance.
 
-IMPLEMENTACAO: implementei o mesmo fluxo sintetico em Python/FastAPI e .NET/ASP.NET Core, com workloads JSONL deterministas, SQLite, testes Python e xUnit.
+IMPLEMENTACAO: implementei o mesmo fluxo sintetico em Python/FastAPI e .NET/ASP.NET Core, com workloads JSONL deterministas, SQLite, testes Python e xUnit. O handoff real foi reconciliado no PC de casa e recuperou idempotency key, persistencia de idempotencia, testes concorrentes, fila duravel, estados queued/retry, `lease_id`, `leased_at`, recuperacao de lease expirado, recovery apos restart, backpressure/backlog, metricas, structured logs, state machine, timeout e transicoes invalidas.
 
-RESULTADO: equivalencia canonica validada para workloads de 100 e 1.000 eventos; benchmark engine, HTTP, concorrencia e soak documentados.
+RESULTADO: validacao local com Ruff OK, 22 testes Python passando, build .NET Release OK e 14 testes xUnit passando. Os benchmarks historicos e o contrato compartilhado foram preservados.
 
 TRADE-OFF: os detalhes de acesso ao banco diferem entre stacks, entao a leitura correta e sobre arquitetura, gargalos e metodo, nao sobre uma verdade universal de linguagem.
 
@@ -72,15 +72,15 @@ SITUACAO: extracoes batch precisam sobreviver a falhas, rate limit, interrupcoes
 
 PROBLEMA: um benchmark de extractor so e justo se comparar checkpoint, sink idempotente, retry e falhas com o mesmo contrato.
 
-DECISAO: preservar a implementacao Python e adicionar um Worker Service .NET clean-room pequeno, com testes de retomada e duplicidade.
+DECISAO: preservar a implementacao Python e adicionar um Worker Service .NET clean-room pequeno, com testes de retomada, duplicidade e manifestos.
 
-IMPLEMENTACAO: Python usa `httpx.MockTransport`, SQLite checkpoint e NDJSON idempotente; .NET Worker usa SQLite checkpoint, sink NDJSON e xUnit para recovery.
+IMPLEMENTACAO: Python usa `httpx.MockTransport`, SQLite checkpoint, manifestos e NDJSON idempotente; .NET Worker usa `IHttpClientFactory`, SQLite checkpoint, sink NDJSON, manifestos e xUnit para recovery. A matriz cobre `429`, `500`, `503`, timeout, connection reset, payload parcial/invalido, crash depois de write antes do checkpoint, crash depois do checkpoint, restart, cache incompleto/corrompido e budget de rate limit esgotado.
 
-RESULTADO: Python ficou com 93% de coverage; .NET passou com 4 testes. A rodada local 10k/100k teve corretude verdadeira nos dois stacks, mas foi marcada como smoke benchmark porque o transporte ainda nao esta alinhado.
+RESULTADO: validacao local com Ruff OK, 22 testes Python, 93,38% coverage, build .NET Release OK e 6 testes xUnit. No benchmark 100k do handoff, Python ficou em 10.381 records/s e .NET em 10.411 records/s: empate pratico, sem vantagem decisiva de linguagem.
 
-TRADE-OFF: nao afirmar que .NET resolveu performance do extractor enquanto o caminho de transporte nao for equivalente.
+TRADE-OFF: nao afirmar que .NET resolveu performance do extractor; a justificativa segura e arquitetural, pela segunda implementacao clean-room e pelo modelo Worker Service.
 
-O QUE EU FARIA EM PRODUCAO: alinhar transporte HTTP/JSON nos dois lados, adicionar matriz completa 429/500/timeout/reset/payload invalido e rodar 5+ medicoes por perfil.
+O QUE EU FARIA EM PRODUCAO: alinhar ambiente, repetir 5+ medicoes por perfil, medir transporte HTTP real, separar custo de JSON/NDJSON, checkpoint e I/O.
 
 ## 6. Race Condition e Idempotencia
 
@@ -90,9 +90,9 @@ PROBLEMA: pre-check em aplicacao nao basta; duas requisicoes podem passar na ver
 
 DECISAO: usar restricoes do banco como fonte de verdade e tratar conflitos no nivel da API.
 
-IMPLEMENTACAO: na plataforma de operacoes, `external_id` e `event_id` sao unicos; a API captura `IntegrityError` e retorna 409. No extractor, o sink carrega IDs ja escritos e pula duplicados no resume.
+IMPLEMENTACAO: na plataforma de operacoes, `external_id` e `event_id` sao unicos; a API captura `IntegrityError` e retorna 409. No extractor, o sink carrega IDs ja escritos e pula duplicados no resume. No support, idempotency key e cooldown sao conceitos separados.
 
-RESULTADO: teste concorrente confirma uma entidade logica criada e uma resposta 409; testes de crash/resume confirmam output sem duplicidade.
+RESULTADO: testes de concorrencia e recovery confirmam que duplicidade logica e reprocessamento nao viram output duplicado.
 
 TRADE-OFF: consistencia forte pode reduzir throughput se o gargalo for escrita sincronizada.
 
@@ -100,15 +100,15 @@ O QUE EU FARIA EM PRODUCAO: avaliar isolation level, optimistic concurrency, loc
 
 ## 7. SQLite WAL e Persistencia Como Gargalo
 
-SITUACAO: o benchmark do support mostrou que o banco local influencia fortemente o resultado.
+SITUACAO: os benchmarks do portfolio mostram que o banco local influencia fortemente o resultado.
 
 PROBLEMA: se o gargalo e escrita SQLite, comparar so linguagem vira simplificacao errada.
 
-DECISAO: separar resultados historicos, WAL e rodada canonica, documentando configuracao e trade-off.
+DECISAO: separar resultados historicos, configuracao de SQLite e rodada canonica, documentando trade-offs em vez de esconder gargalos.
 
-IMPLEMENTACAO: rodei benchmarks default SQLite e uma rodada com WAL + synchronous NORMAL, mantendo arquivos de raw/summary separados.
+IMPLEMENTACAO: mantive benchmarks, workloads e resultados como artefatos de portfolio, mas bloqueei `.md` vindos do PC da empresa que continham caminhos locais corporativos.
 
-RESULTADO: foi possivel explicar throughput, erros, latencia de cauda e contencao de escrita sem esconder o bug/race condition descoberto no processo.
+RESULTADO: foi possivel explicar throughput, erros, latencia de cauda e contencao de escrita sem extrapolar alem do que foi validado.
 
 TRADE-OFF: WAL melhora concorrencia em certos cenarios, mas muda caracteristicas de durabilidade e nao substitui validacao em PostgreSQL.
 
@@ -129,3 +129,19 @@ RESULTADO: a narrativa fica demonstravel: problema -> regra -> arquitetura -> im
 TRADE-OFF: alguns projetos permanecem Python-only porque converter por converter reduziria clareza.
 
 O QUE EU FARIA EM PRODUCAO: criar matriz de decisao por requisito, custo operacional, time, ecossistema, deploy, observabilidade e manutencao.
+
+## 9. PostgreSQL, Docker e Concorrencia
+
+SITUACAO: a `operations-automation-platform` foi preparada para validar PostgreSQL via Docker Compose.
+
+PROBLEMA: neste PC, WSL nao esta instalado e o Docker Desktop nao conseguiu iniciar o daemon; portanto a validacao real com PostgreSQL ficou bloqueada.
+
+DECISAO: manter a afirmacao limitada ao que foi validado: Ruff OK, 10 testes Python, 96,37% coverage, Alembic em SQLite e teste de concorrencia por restricao de banco.
+
+IMPLEMENTACAO: o projeto segue pronto para Compose/PostgreSQL, mas o status publico registra o blocker de ambiente.
+
+RESULTADO: e seguro dizer que ha preparacao para PostgreSQL e Docker, mas nao que a validacao real PostgreSQL/Compose passou neste PC.
+
+TRADE-OFF: honestidade reduz uma frase de impacto, mas aumenta confiabilidade em entrevista.
+
+O QUE EU FARIA EM PRODUCAO: ativar WSL/Docker, subir Compose, rodar migrations em PostgreSQL, repetir testes de concorrencia e documentar resultado com logs de execucao.

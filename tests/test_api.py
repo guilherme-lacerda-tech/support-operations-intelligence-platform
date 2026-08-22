@@ -19,7 +19,7 @@ def test_seed_and_ingest_event_through_api():
     response = client.post(
         "/events",
         json={
-            "asset_id": "PUMP-101",
+            "asset_external_id": "PUMP-101",
             "source": "north-gateway",
             "category": "offline",
             "severity": 92,
@@ -33,11 +33,6 @@ def test_seed_and_ingest_event_through_api():
     assert body["action"]["state"] == "queued"
     assert len(client.get("/incidents").json()) == 1
     assert len(client.get("/actions").json()) == 1
-    metrics = client.get("/metrics").json()
-    assert metrics["events"] == 1
-    assert metrics["incidents"] == 1
-    assert metrics["actions"] == 1
-    assert len(client.get("/audit").json()) >= 3
     assert client.post("/jobs/health-sweep").json() == {
         "job_name": "health_sweep",
         "status": "succeeded",
@@ -68,32 +63,3 @@ def test_api_returns_404_for_unknown_asset_event():
     )
 
     assert response.status_code == 404
-
-
-def test_api_processes_queued_actions_and_resets():
-    client = TestClient(create_test_app())
-    assert client.post("/demo/seed").status_code == 200
-    response = client.post(
-        "/events",
-        json={
-            "asset_id": "GATEWAY-7",
-            "source": "warehouse",
-            "category": "offline",
-            "severity": 91,
-            "message": "Synthetic gateway outage with transient executor",
-            "executor_mode": "transient_failure",
-        },
-    )
-    assert response.status_code == 200
-
-    maintenance = client.post("/maintenance/process-actions").json()
-
-    assert maintenance == {"processed": 1, "succeeded": 1, "failed": 0}
-    action = client.get("/actions").json()[0]
-    assert action["state"] == "succeeded"
-    assert action["attempts"] == 2
-
-    reset = client.delete("/admin/reset").json()
-
-    assert reset["deleted"]["events"] == 1
-    assert client.get("/metrics").json()["events"] == 0

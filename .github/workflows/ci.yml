@@ -24,6 +24,11 @@ jobs:
           python-version: "3.12"
           cache: "pip"
 
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: "10.0.x"
+
       - name: Install
         run: |
           python -m pip install --upgrade pip
@@ -34,3 +39,9 @@ jobs:
 
       - name: Tests
         run: python -m pytest --cov --cov-report=term-missing -q
+
+      - name: .NET build
+        run: dotnet build dotnet/OpsIntelligenceCleanRoom.sln
+
+      - name: .NET tests
+        run: dotnet test dotnet/OpsIntelligenceCleanRoom.sln --no-build
